@@ -8,27 +8,30 @@
     <TextView
         android:id="@+id/AquSmartTitle"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_height="102dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+
+
+        android:layout_marginTop="56dp"
+
         android:text="AquaSmart"
         android:textColor="@color/white"
-        android:textSize="60sp"
-        android:textStyle="bold"
-
-
-        />
+        android:textSize="55sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/getStartedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="530dp"
-        android:text="Get Started"
-        android:textSize="18sp"
-        android:padding="18dp"
-        android:background="@color/blue"
-
         android:layout_alignRight="@id/AquSmartTitle"
-        />
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="530dp"
+        android:layout_marginEnd="62dp"
+        android:background="@color/white_tr"
+
+        android:padding="18dp"
+        android:text="Get Started"
+        android:textSize="18sp" />
 
 </RelativeLayout>

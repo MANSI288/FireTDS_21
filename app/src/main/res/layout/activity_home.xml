@@ -8,25 +8,21 @@
     tools:context=".HomeActivity">
 
     <!-- Add the Toolbar -->
-    <androidx.appcompat.widget.Toolbar
+    <include
         android:id="@+id/toolbar"
-        android:layout_width="408dp"
-        android:layout_height="72dp"
-        android:background="@color/dark_blue"
-        android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:layout_constraintTop_toTopOf="parent"
-        app:popupTheme="@style/Theme.AppCompat.Light"
-        tools:layout_editor_absoluteX="3dp"
-        tools:ignore="MissingConstraints" />
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/testButton"
         android:layout_width="159dp"
         android:layout_height="75dp"
-        android:layout_marginTop="268dp"
+        android:layout_marginTop="192dp"
+        android:background="@color/white_tr"
         android:text="Test Water"
-        android:background="@color/blue"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

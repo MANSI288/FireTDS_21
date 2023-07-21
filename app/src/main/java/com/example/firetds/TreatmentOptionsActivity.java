@@ -3,7 +3,7 @@ package com.example.firetds;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
+import android.text.Html;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -16,23 +16,25 @@ public class TreatmentOptionsActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setTitle("");
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        }
+        getSupportActionBar().setTitle("Current TDS");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         // Initialize the TextView to display treatment options
         TextView treatmentOptionsTextView = findViewById(R.id.treatmentOptionsTextView);
 
         // Example treatment options, you can customize this as needed
-        String treatmentOptions = "1. Add chlorine to the pool.\n" +
-                "2. Use an algaecide to control algae growth.\n" +
-                "3. Balance pH levels with appropriate chemicals.\n" +
-                "4. Use a pool clarifier to improve water clarity.\n" +
-                "5. Regularly clean the pool filters.";
+        String treatmentOptions = "<ol>" +
+                "<li>Add chlorine to the pool.</li>" +
+                "<li>Use an algaecide to control algae growth.</li>" +
+                "<li>Balance pH levels with appropriate chemicals.</li>" +
+                "<li>Use a pool clarifier to improve water clarity.</li>" +
+                "<li>Regularly clean the pool filters.</li>" +
+                "</ol>";
 
         // Display the treatment options in the TextView
-        treatmentOptionsTextView.setText(treatmentOptions);
+        treatmentOptionsTextView.setText(Html.fromHtml(treatmentOptions, Html.FROM_HTML_MODE_COMPACT));
+        treatmentOptionsTextView.setTextColor(getResources().getColor(android.R.color.white));
     }
-}
+    }
+

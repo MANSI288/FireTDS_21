@@ -23,8 +23,10 @@ public class HomeActivity extends AppCompatActivity {
         testButton = findViewById(R.id.testButton);
         
         //find toolbar by id
-        toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Main Page");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // Check if the testButton is not null before setting the click listener
         if (testButton != null) {

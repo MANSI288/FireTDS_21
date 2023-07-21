@@ -40,7 +40,7 @@ public class TestActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setTitle("Measure Water TDS");
+        getSupportActionBar().setTitle("Home");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         treatmentDetailButton = findViewById(R.id.treatmentDetailButton);
@@ -80,7 +80,7 @@ public class TestActivity extends AppCompatActivity {
 
                 if (ppm < 100) {
                     InsightTextView.setText("Water TDS is acceptable");
-                    treatmentDetailButton.setVisibility(View.GONE);
+                    treatmentDetailButton.setVisibility(View.VISIBLE);
                 } else {
                     InsightTextView.setText("Water TDS is Unacceptable");
                     treatmentDetailButton.setVisibility(View.VISIBLE);
