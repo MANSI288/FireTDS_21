@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".HistoryData"
     android:background="@drawable/blueplain"
-    tools:context=".HomeActivity">
+    >
 
-    <!-- Add the Toolbar -->
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar"
@@ -15,16 +15,21 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/testButton"
-        android:layout_width="159dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="192dp"
-        android:background="@color/white_tr"
-        android:text="Test Water"
-        android:textSize="18sp"
+    <TextView
+        android:id="@+id/Data"
+        android:layout_width="415dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="60dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Data"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:background="@color/white_tr"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

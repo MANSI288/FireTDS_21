@@ -39,5 +39,12 @@
             android:theme="@style/AppTheme"
             android:parentActivityName=".TestActivity"
             android:exported="true" />
+
+        <activity
+            android:name=".HistoryData"
+            android:label="Treatment Options"
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".TestActivity"
+            android:exported="true" />
     </application>
 </manifest>
