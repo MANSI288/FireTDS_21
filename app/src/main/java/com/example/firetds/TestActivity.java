@@ -78,10 +78,13 @@ public class TestActivity extends AppCompatActivity {
 
                 ppm = dataSnapshot.child("ppm").getValue(double.class);
 
-                if (ppm < 100) {
+                if (ppm < 1000) {
                     InsightTextView.setText("Water TDS is acceptable");
                     treatmentDetailButton.setVisibility(View.GONE);
-                } else {
+                } else if (ppm < 1500) {
+                    InsightTextView.setText("Water TDS is ok");
+                    treatmentDetailButton.setVisibility(View.VISIBLE);
+                }else {
                     InsightTextView.setText("Water TDS is Unacceptable");
                     treatmentDetailButton.setVisibility(View.VISIBLE);
                 }
