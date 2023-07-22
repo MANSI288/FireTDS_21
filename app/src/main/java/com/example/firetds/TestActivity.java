@@ -24,7 +24,8 @@ public class TestActivity extends AppCompatActivity {
     //declare buttons
     private TextView tdsTitleText, tdsValueDisplay, InsightTextView;
     private Button treatmentDetailButton; // Declare the button
-
+    private Button SaveDataButton;
+    private Button HistoryButton;
     private FirebaseAnalytics mFirebaseAnalytics;
     private DatabaseReference mDatabase;
     // ...
@@ -52,7 +53,24 @@ public class TestActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        HistoryButton = findViewById(R.id.HistoryButton);
+        HistoryButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navigate to the TreatmentOptionsActivity when the button is clicked
+                //Intent intent = new Intent(TestActivity.this, HistoryData.class);
+                //startActivity(intent);
+            }
+        });
 
+        SaveDataButton = findViewById(R.id.SaveData);
+        SaveDataButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navigate to the TreatmentOptionsActivity when the button is clicked
+
+            }
+        });
         // FVBI
         tdsTitleText = findViewById(R.id.tdsTitleText);
         tdsValueDisplay = findViewById(R.id.tdsValueDisplay);
