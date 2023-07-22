@@ -15,11 +15,11 @@ public class HistoryData extends AppCompatActivity {
         setContentView(R.layout.activity_history_data);
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Water test");
+        getSupportActionBar().setTitle("Home");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Data=findViewById(R.id.Data);
-        Data.setText("Data");
+
 
     }
 }

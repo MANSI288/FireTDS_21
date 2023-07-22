@@ -5,13 +5,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import androidx.appcompat.widget.Toolbar;
-
-
 import androidx.appcompat.app.AppCompatActivity;
 
 public class HomeActivity extends AppCompatActivity {
 
-    public Button testButton,HistoryData;
+    public Button testButton, HistoryData;
     public Toolbar toolbar; //declare toolbar
 
     @Override
@@ -21,7 +19,8 @@ public class HomeActivity extends AppCompatActivity {
 
         // Find the testButton view by ID
         testButton = findViewById(R.id.testButton);
-         HistoryData=findViewById(R.id.HistoryData);
+        HistoryData = findViewById(R.id.HistoryData);
+
         //find toolbar by id
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -37,17 +36,19 @@ public class HomeActivity extends AppCompatActivity {
                 }
             });
         }
+
+        // Set click listener for the HistoryData button
+        if (HistoryData != null) {
+            HistoryData.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // Navigate to the TreatmentOptionsActivity when the button is clicked
+                    Intent intent = new Intent(HomeActivity.this, HistoryData.class);
+                    startActivity(intent);
+                }
+            });
+        }
     }
- HistoryData.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Navigate to the TreatmentOptionsActivity when the button is clicked
-                Intent intent = new Intent(HomeActivity.this, HistoryData.class);
-                startActivity(intent);
-            }
-        });
-
-
 
     public void goToTestActivity() {
         Intent intent = new Intent(HomeActivity.this, TestActivity.class);
