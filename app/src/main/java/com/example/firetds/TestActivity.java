@@ -83,10 +83,17 @@ public class TestActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
-                tdsStatus = dataSnapshot.child("ppm").getValue().toString();
+                tdsStatus = dataSnapshot.child("ppm").getValue(String.class); // Retrieve as String
                 tdsValueDisplay.setText(tdsStatus);
 
-                ppm = dataSnapshot.child("ppm").getValue(double.class);
+                // Convert the string value to double if needed (if the value is numeric)
+                try {
+                    ppm = Double.parseDouble(tdsStatus);
+                } catch (NumberFormatException e) {
+                    // Handle the case when the value is not numeric (optional)
+                    ppm = 0; // Set to a default value or handle the error appropriately
+                    Log.e("ppm", "Failed to convert value to double.", e);
+                }
 
                 if (ppm < 1000) {
                     InsightTextView.setText("Water TDS is acceptable");
@@ -94,7 +101,7 @@ public class TestActivity extends AppCompatActivity {
                 } else if (ppm < 1500) {
                     InsightTextView.setText("Water TDS is ok");
                     treatmentDetailButton.setVisibility(View.VISIBLE);
-                }else {
+                } else {
                     InsightTextView.setText("Water TDS is Unacceptable");
                     treatmentDetailButton.setVisibility(View.VISIBLE);
                 }
