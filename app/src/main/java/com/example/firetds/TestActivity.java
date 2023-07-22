@@ -90,7 +90,7 @@ public class TestActivity extends AppCompatActivity {
 
                 if (ppm < 1000) {
                     InsightTextView.setText("Water TDS is acceptable");
-                    treatmentDetailButton.setVisibility(View.VISIBLE);
+                    treatmentDetailButton.setVisibility(View.GONE);
                 } else if (ppm < 1500) {
                     InsightTextView.setText("Water TDS is ok");
                     treatmentDetailButton.setVisibility(View.VISIBLE);
