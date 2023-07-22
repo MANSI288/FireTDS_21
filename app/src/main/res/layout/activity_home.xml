@@ -17,12 +17,13 @@
 
     <Button
         android:id="@+id/testButton"
-        android:layout_width="159dp"
-        android:layout_height="75dp"
+        android:layout_width="128dp"
+        android:layout_height="126dp"
         android:layout_marginTop="192dp"
-        android:background="@color/white_tr"
+        android:background="@drawable/circular_btn"
         android:text="Test Water"
-        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

@@ -21,6 +21,6 @@ public class HistoryData extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Data = findViewById(R.id.Data);
-        Data.setText("Data");
+
     }
 }
