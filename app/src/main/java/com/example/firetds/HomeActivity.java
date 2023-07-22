@@ -21,7 +21,7 @@ public class HomeActivity extends AppCompatActivity {
 
         // Find the testButton view by ID
         testButton = findViewById(R.id.testButton);
-        
+         HistoryData=findViewById(R.id.HistoryData);
         //find toolbar by id
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
