@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class HomeActivity extends AppCompatActivity {
 
-    public Button testButton;
+    public Button testButton,HistoryData;
     public Toolbar toolbar; //declare toolbar
 
     @Override
@@ -38,7 +38,14 @@ public class HomeActivity extends AppCompatActivity {
             });
         }
     }
-
+ HistoryData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navigate to the TreatmentOptionsActivity when the button is clicked
+                Intent intent = new Intent(HomeActivity.this, HistoryData.class);
+                startActivity(intent);
+            }
+        });
 
 
 
