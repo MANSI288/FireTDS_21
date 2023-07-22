@@ -53,15 +53,7 @@ public class TestActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        HistoryButton = findViewById(R.id.HistoryButton);
-        HistoryButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Navigate to the TreatmentOptionsActivity when the button is clicked
-                Intent intent = new Intent(TestActivity.this, HistoryData.class);
-                startActivity(intent);
-            }
-        });
+        
 
         SaveDataButton = findViewById(R.id.SaveData);
         SaveDataButton.setOnClickListener(new OnClickListener() {
