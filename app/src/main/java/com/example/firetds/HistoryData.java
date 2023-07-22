@@ -3,14 +3,12 @@ package com.example.firetds;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.TextView;
 
 public class HistoryData extends AppCompatActivity {
     private TextView Data;
     public Toolbar toolbar;
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,7 +18,8 @@ public class HistoryData extends AppCompatActivity {
         getSupportActionBar().setTitle("Water test");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        Data = findViewById(R.id.Data);
+        Data=findViewById(R.id.Data);
+        Data.setText("Data");
 
     }
 }
