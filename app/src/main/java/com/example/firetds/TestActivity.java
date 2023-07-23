@@ -4,10 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.icu.text.SimpleDateFormat;
+import android.icu.util.Calendar;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import android.content.Intent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -53,16 +57,9 @@ public class TestActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        
 
-        SaveDataButton = findViewById(R.id.SaveData);
-        SaveDataButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Navigate to the TreatmentOptionsActivity when the button is clicked
 
-            }
-        });
+
         // FVBI
         tdsTitleText = findViewById(R.id.tdsTitleText);
         tdsValueDisplay = findViewById(R.id.tdsValueDisplay);
@@ -84,6 +81,7 @@ public class TestActivity extends AppCompatActivity {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 tdsStatus = dataSnapshot.child("ppm").getValue().toString();
+
                 tdsValueDisplay.setText(tdsStatus);
 
                 ppm = dataSnapshot.child("ppm").getValue(double.class);
@@ -106,6 +104,20 @@ public class TestActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
                 // Failed to read value
                 Log.w("ppm", "Failed to read value.", error.toException());
+            }
+        });
+
+        SaveDataButton = findViewById(R.id.SaveData);
+        SaveDataButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navigate to the TreatmentOptionsActivity when the button is clicked
+                SimpleDateFormat df = new SimpleDateFormat("yyyy.MM.dd '@' HH:mm");
+                String date = df.format(Calendar.getInstance().getTime());
+                myRef.child("test").push().setValue(date + "\n " + tdsStatus + " ppm" );
+
+                // Display the Toast message
+                Toast.makeText(TestActivity.this, "Data saved in history", Toast.LENGTH_SHORT).show();
             }
         });
 

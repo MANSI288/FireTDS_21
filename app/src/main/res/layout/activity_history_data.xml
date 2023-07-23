@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <ListView
         android:id="@+id/Data"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
