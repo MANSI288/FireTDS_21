@@ -1,0 +1,38 @@
+<!-- res/layout/activity_welcome.xml -->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/blueplain">
+
+    <TextView
+        android:id="@+id/AquSmartTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="102dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+
+
+        android:layout_marginTop="56dp"
+
+        android:text="AquaSmart"
+        android:textColor="@color/white"
+        android:textSize="60sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/getStartedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="152dp"
+        android:layout_marginTop="450dp"
+        android:layout_marginLeft="135dp"
+
+
+
+        android:background="@drawable/circular_btn"
+        android:padding="20dp"
+        android:text="Get Started"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+</RelativeLayout>
