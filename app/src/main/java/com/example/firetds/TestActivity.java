@@ -27,15 +27,16 @@ public class TestActivity extends AppCompatActivity {
 
     //declare buttons
     private TextView tdsTitleText, tdsValueDisplay, InsightTextView;
-    private Button treatmentDetailButton; // Declare the button
+    private Button treatmentDetailButton, saveButton; // Declare the button
     private Button SaveDataButton;
     private Button HistoryButton;
     private FirebaseAnalytics mFirebaseAnalytics;
     private DatabaseReference mDatabase;
+    private FirebaseDatabase firebaseDatabase;
     // ...
 
     String tdsStatus;
-    double ppm;
+    int ppm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +65,7 @@ public class TestActivity extends AppCompatActivity {
         tdsTitleText = findViewById(R.id.tdsTitleText);
         tdsValueDisplay = findViewById(R.id.tdsValueDisplay);
         InsightTextView = findViewById(R.id.InsightTextView);
+        saveButton = findViewById(R.id.saveButton);
 
         // Obtain the FirebaseAnalytics instance.
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
@@ -84,7 +86,7 @@ public class TestActivity extends AppCompatActivity {
 
                 tdsValueDisplay.setText(tdsStatus);
 
-                ppm = dataSnapshot.child("ppm").getValue(double.class);
+                ppm = dataSnapshot.child("ppm").getValue(int.class);
 
                 if (ppm < 100) {
                     InsightTextView.setText("Water TDS is acceptable");
@@ -107,20 +109,38 @@ public class TestActivity extends AppCompatActivity {
             }
         });
 
-        SaveDataButton = findViewById(R.id.SaveData);
-        SaveDataButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Navigate to the TreatmentOptionsActivity when the button is clicked
-                SimpleDateFormat df = new SimpleDateFormat("yyyy.MM.dd '@' HH:mm");
-                String date = df.format(Calendar.getInstance().getTime());
-                myRef.child("test").push().setValue(date + "\n " + tdsStatus + " ppm" );
 
-                // Display the Toast message
-                Toast.makeText(TestActivity.this, "Data saved in history", Toast.LENGTH_SHORT).show();
-            }
-        });
 
         // OnClickListener
+        saveButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference("TDSList");
+
+                java.text.SimpleDateFormat df = new java.text.SimpleDateFormat("yyyy.MM.dd '@' HH:mm");
+                String date = df.format(java.util.Calendar.getInstance().getTime());
+                int ppm1 = ppm;
+                String insight;
+
+                if (ppm < 100) {
+                    insight = "Acceptable Water TDS";
+
+                }
+                if (ppm < 150) {
+                    insight = "Acceptable Water TDS";
+
+                }else{
+                    insight = "Unacceptable Water TDS";
+                }
+
+
+                TdsData obj = new TdsData(date,insight, ppm1);
+                myRef.push().setValue(obj);
+
+
+            }
+        });
     }
 }

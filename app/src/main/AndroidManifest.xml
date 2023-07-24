@@ -20,6 +20,12 @@
         </activity>
 
         <activity
+            android:name=".HistoryList"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:parentActivityName=".HomeActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".HomeActivity"
             android:label="Home Activity"
             android:theme="@style/AppTheme"
@@ -40,11 +46,5 @@
             android:parentActivityName=".TestActivity"
             android:exported="true" />
 
-        <activity
-            android:name=".HistoryData"
-            android:label="Treatment Options"
-            android:theme="@style/AppTheme"
-            android:parentActivityName=".TestActivity"
-            android:exported="true" />
     </application>
 </manifest>

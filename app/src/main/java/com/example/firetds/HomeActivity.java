@@ -43,7 +43,7 @@ public class HomeActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     // Navigate to the TreatmentOptionsActivity when the button is clicked
-                    Intent intent = new Intent(HomeActivity.this, HistoryData.class);
+                    Intent intent = new Intent(HomeActivity.this, HistoryList.class);
                     startActivity(intent);
                 }
             });
