@@ -4,7 +4,9 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.PopupMenu;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -34,6 +36,24 @@ public class TdsAdapter extends RecyclerView.Adapter<TdsAdapter.MyViewHolder> {
         holder.ppm1.setText(String.valueOf(tdsData.getPpm1()));
         holder.date.setText(tdsData.getDate());
         holder.insight.setText(tdsData.getInsight());
+
+        holder.txt_option.setOnClickListener(v ->
+        {
+            PopupMenu popupMenu = new PopupMenu(context, holder.txt_option);
+            popupMenu.inflate(R.menu.option_menu);
+            popupMenu.setOnMenuItemClickListener(item -> {
+                if (item.getItemId() == R.id.menu_remove) {
+                    DAOTds dao = new DAOTds();
+                    dao.remove(tdsData.getKey()).addOnSuccessListener(suc -> {
+                        Toast.makeText(context, "Record is removed", Toast.LENGTH_SHORT).show();
+                        notifyItemRemoved(position);
+                        list.remove(tdsData);
+                    });
+                }
+                return false;
+            });
+            popupMenu.show();
+        });
     }
 
     @Override
