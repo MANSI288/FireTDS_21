@@ -33,7 +33,6 @@ public class HistoryList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_historylist);
 
-        // Find toolbar by id
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Main Page");
@@ -51,6 +50,9 @@ public class HistoryList extends AppCompatActivity {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                // Clear the list before adding items
+                list.clear();
+
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
                     TdsData tdsData = dataSnapshot.getValue(TdsData.class);
                     tdsData.setKey(dataSnapshot.getKey());
@@ -67,24 +69,19 @@ public class HistoryList extends AppCompatActivity {
         predictionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Check if we have at least 2 entries
                 if (list.size() < 2) {
                     Toast.makeText(HistoryList.this, "Not enough data to calculate trend.", Toast.LENGTH_LONG).show();
                     return;
                 }
 
-                // Sort list by date
                 Collections.sort(list, (tdsData1, tdsData2) -> tdsData1.getDate().compareTo(tdsData2.getDate()));
 
-                // Calculate average PPM increase per day
                 int totalIncrease = list.get(list.size() - 1).getPpm1() - list.get(0).getPpm1();
                 float avgIncreasePerDay = (float) totalIncrease / (list.size() - 1);
 
-                // Estimate days until pool cleaning
                 int remainingPpm = 1000 - list.get(list.size() - 1).getPpm1();
                 float estimatedDays = remainingPpm / avgIncreasePerDay;
 
-                // Start PredictionActivity
                 Intent intent = new Intent(HistoryList.this, PredictionActivity.class);
                 intent.putExtra("prediction", Math.round(estimatedDays));
                 startActivity(intent);
