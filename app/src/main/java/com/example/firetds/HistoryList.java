@@ -1,6 +1,10 @@
 package com.example.firetds;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class HistoryList extends AppCompatActivity {
 
@@ -23,14 +28,12 @@ public class HistoryList extends AppCompatActivity {
     TdsAdapter tdsAdapter;
     ArrayList<TdsData> list;
 
-    String key = null;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_historylist);
 
-        //find toolbar by id
+        // Find toolbar by id
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Main Page");
@@ -42,46 +45,50 @@ public class HistoryList extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         list = new ArrayList<>();
-
-        //tdsAdapter = new TdsAdapter(HistoryList.this, list);
         tdsAdapter = new TdsAdapter(this, list);
         recyclerView.setAdapter(tdsAdapter);
-
-
-
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
-
-
                     TdsData tdsData = dataSnapshot.getValue(TdsData.class);
-
                     tdsData.setKey(dataSnapshot.getKey());
                     list.add(tdsData);
-                    key = dataSnapshot.getKey();
-
-
                 }
-
                 tdsAdapter.notifyDataSetChanged();
-
-
-
-
-
             }
-
 
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-
-            }
+            public void onCancelled(@NonNull DatabaseError error) { }
         });
 
-    }
+        Button predictionButton = findViewById(R.id.predictionButton);
+        predictionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Check if we have at least 2 entries
+                if (list.size() < 2) {
+                    Toast.makeText(HistoryList.this, "Not enough data to calculate trend.", Toast.LENGTH_LONG).show();
+                    return;
+                }
 
+                // Sort list by date
+                Collections.sort(list, (tdsData1, tdsData2) -> tdsData1.getDate().compareTo(tdsData2.getDate()));
+
+                // Calculate average PPM increase per day
+                int totalIncrease = list.get(list.size() - 1).getPpm1() - list.get(0).getPpm1();
+                float avgIncreasePerDay = (float) totalIncrease / (list.size() - 1);
+
+                // Estimate days until pool cleaning
+                int remainingPpm = 1000 - list.get(list.size() - 1).getPpm1();
+                float estimatedDays = remainingPpm / avgIncreasePerDay;
+
+                // Start PredictionActivity
+                Intent intent = new Intent(HistoryList.this, PredictionActivity.class);
+                intent.putExtra("prediction", Math.round(estimatedDays));
+                startActivity(intent);
+            }
+        });
+    }
 }

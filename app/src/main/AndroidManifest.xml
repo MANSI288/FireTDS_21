@@ -46,5 +46,12 @@
             android:parentActivityName=".TestActivity"
             android:exported="true" />
 
+        <activity
+            android:name=".PredictionActivity"
+            android:label="Prediction Activity"
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".HistoryList"
+            android:exported="true" />
+
     </application>
 </manifest>

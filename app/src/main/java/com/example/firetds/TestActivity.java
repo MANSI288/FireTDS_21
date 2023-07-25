@@ -55,6 +55,8 @@ public class TestActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Navigate to the TreatmentOptionsActivity when the button is clicked
                 Intent intent = new Intent(TestActivity.this, TreatmentOptionsActivity.class);
+                intent.putExtra("ppm", ppm);
+
                 startActivity(intent);
             }
         });
