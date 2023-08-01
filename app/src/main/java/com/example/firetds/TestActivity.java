@@ -4,8 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.icu.text.SimpleDateFormat;
-import android.icu.util.Calendar;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -14,7 +12,6 @@ import android.widget.Toast;
 
 import android.content.Intent;
 import android.view.View;
-import android.view.View.OnClickListener;
 
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.database.DataSnapshot;
@@ -28,8 +25,6 @@ public class TestActivity extends AppCompatActivity {
     //declare buttons
     private TextView tdsTitleText, tdsValueDisplay, InsightTextView;
     private Button treatmentDetailButton, saveButton; // Declare the button
-    private Button SaveDataButton;
-    private Button HistoryButton;
     private FirebaseAnalytics mFirebaseAnalytics;
     private DatabaseReference mDatabase;
     private FirebaseDatabase firebaseDatabase;
@@ -50,7 +45,7 @@ public class TestActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         treatmentDetailButton = findViewById(R.id.treatmentDetailButton);
-        treatmentDetailButton.setOnClickListener(new OnClickListener() {
+        treatmentDetailButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Navigate to the TreatmentOptionsActivity when the button is clicked
@@ -60,8 +55,6 @@ public class TestActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
 
         // FVBI
         tdsTitleText = findViewById(R.id.tdsTitleText);
@@ -76,8 +69,6 @@ public class TestActivity extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("TDS");
 
-        // myRef.setValue("Hello, World!");
-
         // Read from the database
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -90,14 +81,16 @@ public class TestActivity extends AppCompatActivity {
 
                 ppm = dataSnapshot.child("ppm").getValue(int.class);
 
-                if (ppm < 1000) {
-                    InsightTextView.setText(getString(R.string.text_ideal));
+                if (ppm < 100) {
+                    InsightTextView.setText("Water TDS is acceptable");
                     treatmentDetailButton.setVisibility(View.GONE);
-                } else if (ppm >= 1000 && ppm < 1500) {
-                    InsightTextView.setText(getString(R.string.text_accept));
+                }
+                if(ppm<150){
+                    InsightTextView.setText("Water TDS is acceptable");
                     treatmentDetailButton.setVisibility(View.VISIBLE);
-                } else {
-                    InsightTextView.setText(getString(R.string.text_unaccept));
+                }
+                else {
+                    InsightTextView.setText("Water TDS is Unacceptable");
                     treatmentDetailButton.setVisibility(View.VISIBLE);
                 }
             }
@@ -109,10 +102,8 @@ public class TestActivity extends AppCompatActivity {
             }
         });
 
-
-
         // OnClickListener
-        saveButton.setOnClickListener(new OnClickListener() {
+        saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -124,25 +115,23 @@ public class TestActivity extends AppCompatActivity {
                 int ppm1 = ppm;
                 String insight;
 
-                if (ppm < 1000) {
-                    insight = getString(R.string.text_ideal);
+                if (ppm < 100) {
+                    insight = "Acceptable Water TDS";
 
                 }
-                else if (ppm >= 1000 && ppm < 1500) {
-                    insight = getString(R.string.text_accept);
+                if (ppm < 150) {
+                    insight = "Acceptable Water TDS";
 
                 }else{
-                    insight = getString(R.string.text_unaccept);
+                    insight = "Unacceptable Water TDS";
                 }
 
+                java.util.Calendar cal = java.util.Calendar.getInstance();
+                cal.setTime(new java.util.Date());
+                int hour = cal.get(java.util.Calendar.HOUR_OF_DAY);
 
-                TdsData obj = new TdsData(date,insight, ppm1);
+                TdsData obj = new TdsData(date,insight, ppm1, hour);
                 myRef.push().setValue(obj);
-
-                // Show a toast message to indicate data is saved
-                Toast.makeText(TestActivity.this, getString(R.string.text_saveprompt), Toast.LENGTH_SHORT).show();
-
-
             }
         });
     }
