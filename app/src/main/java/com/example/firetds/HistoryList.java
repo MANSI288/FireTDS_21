@@ -71,7 +71,6 @@ public class HistoryList extends AppCompatActivity {
                 }
                 tdsAdapter.notifyDataSetChanged();
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) { }
         });
