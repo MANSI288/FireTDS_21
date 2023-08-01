@@ -82,15 +82,15 @@ public class TestActivity extends AppCompatActivity {
                 ppm = dataSnapshot.child("ppm").getValue(int.class);
 
                 if (ppm < 100) {
-                    InsightTextView.setText("Water TDS is acceptable");
+                    InsightTextView.setText(getString(R.string.text_ideal));
                     treatmentDetailButton.setVisibility(View.GONE);
                 }
                 if(ppm<150){
-                    InsightTextView.setText("Water TDS is acceptable");
+                    InsightTextView.setText(getString(R.string.text_accept));
                     treatmentDetailButton.setVisibility(View.VISIBLE);
                 }
                 else {
-                    InsightTextView.setText("Water TDS is Unacceptable");
+                    InsightTextView.setText(getString(R.string.text_unaccept));
                     treatmentDetailButton.setVisibility(View.VISIBLE);
                 }
             }
@@ -116,14 +116,14 @@ public class TestActivity extends AppCompatActivity {
                 String insight;
 
                 if (ppm < 100) {
-                    insight = "Acceptable Water TDS";
+                    insight = getString(R.string.text_ideal);
 
                 }
                 if (ppm < 150) {
-                    insight = "Acceptable Water TDS";
+                    insight = getString(R.string.text_accept);
 
                 }else{
-                    insight = "Unacceptable Water TDS";
+                    insight = getString(R.string.text_unaccept);
                 }
 
                 java.util.Calendar cal = java.util.Calendar.getInstance();
@@ -132,6 +132,9 @@ public class TestActivity extends AppCompatActivity {
 
                 TdsData obj = new TdsData(date,insight, ppm1, hour);
                 myRef.push().setValue(obj);
+
+                // Show a toast message to indicate data is saved
+                Toast.makeText(TestActivity.this, getString(R.string.text_saveprompt), Toast.LENGTH_SHORT).show();
             }
         });
     }
