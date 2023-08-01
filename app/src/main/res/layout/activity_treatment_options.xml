@@ -27,7 +27,7 @@
         android:layout_gravity="center"
         android:background="@color/white_tr"
         android:padding="21dp"
-        android:text="Pool Treatment Options"
+        android:text="@string/text_options"
         android:textAlignment="center"
         android:textStyle="bold"
         android:textColor="@android:color/black"

@@ -90,16 +90,14 @@ public class TestActivity extends AppCompatActivity {
 
                 ppm = dataSnapshot.child("ppm").getValue(int.class);
 
-                if (ppm < 100) {
-                    InsightTextView.setText("Water TDS is acceptable");
+                if (ppm < 1000) {
+                    InsightTextView.setText(getString(R.string.text_ideal));
                     treatmentDetailButton.setVisibility(View.GONE);
-                }
-                if(ppm<150){
-                    InsightTextView.setText("Water TDS is acceptable");
+                } else if (ppm >= 1000 && ppm < 1500) {
+                    InsightTextView.setText(getString(R.string.text_accept));
                     treatmentDetailButton.setVisibility(View.VISIBLE);
-                }
-                else {
-                    InsightTextView.setText("Water TDS is Unacceptable");
+                } else {
+                    InsightTextView.setText(getString(R.string.text_unaccept));
                     treatmentDetailButton.setVisibility(View.VISIBLE);
                 }
             }
@@ -126,20 +124,23 @@ public class TestActivity extends AppCompatActivity {
                 int ppm1 = ppm;
                 String insight;
 
-                if (ppm < 100) {
-                    insight = "Acceptable Water TDS";
+                if (ppm < 1000) {
+                    insight = getString(R.string.text_ideal);
 
                 }
-                if (ppm < 150) {
-                    insight = "Acceptable Water TDS";
+                else if (ppm >= 1000 && ppm < 1500) {
+                    insight = getString(R.string.text_accept);
 
                 }else{
-                    insight = "Unacceptable Water TDS";
+                    insight = getString(R.string.text_unaccept);
                 }
 
 
                 TdsData obj = new TdsData(date,insight, ppm1);
                 myRef.push().setValue(obj);
+
+                // Show a toast message to indicate data is saved
+                Toast.makeText(TestActivity.this, getString(R.string.text_saveprompt), Toast.LENGTH_SHORT).show();
 
 
             }

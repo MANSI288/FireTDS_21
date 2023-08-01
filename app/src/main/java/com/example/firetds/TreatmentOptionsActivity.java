@@ -29,19 +29,7 @@ public class TreatmentOptionsActivity extends AppCompatActivity {
 
         // Adjust the treatment options based on the ppm value
         String treatmentOptions;
-        if (ppm >= 150 && ppm < 300) {
-            treatmentOptions = "<ol>" +
-                    "<li>Change 1/3 of the pool water.</li>" +
-                    "</ol>";
-        } else if (ppm >= 300 && ppm < 1000) {
-            treatmentOptions = "<ol>" +
-                    "<li>Use disinfection water and other cleaning supplies.</li>" +
-                    "</ol>";
-        } else if (ppm >= 1000) {
-            treatmentOptions = "<ol>" +
-                    "<li>All the water needs to be drained, then the swimming pool needs to be cleaned before adding new water.</li>" +
-                    "</ol>";
-        } else {
+        if (ppm >= 1000 && ppm < 1500) {
             treatmentOptions = "<ol>" +
                     "<li>Add chlorine to the pool.</li>" +
                     "<li>Use an algaecide to control algae growth.</li>" +
@@ -49,6 +37,11 @@ public class TreatmentOptionsActivity extends AppCompatActivity {
                     "<li>Use a pool clarifier to improve water clarity.</li>" +
                     "<li>Regularly clean the pool filters.</li>" +
                     "</ol>";
+        } else  {
+            treatmentOptions = "<ol>" +
+                    "<li>Eviacuate Pool and change water.</li>" +
+                    "</ol>";
+
         }
 
         // Display the treatment options in the TextView

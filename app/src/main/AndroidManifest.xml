@@ -53,5 +53,11 @@
             android:parentActivityName=".HistoryList"
             android:exported="true" />
 
+        <activity
+            android:name=".LanguageSelectionActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme">
+        </activity>
+
     </application>
 </manifest>

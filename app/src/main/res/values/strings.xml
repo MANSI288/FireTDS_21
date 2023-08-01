@@ -1,3 +1,43 @@
 <resources>
     <string name="app_name">FireTDS</string>
+    <string name="button_GetStarted">Get Started</string>
+    <string name="button_TestWater">Test Water</string>
+    <string name="button_DataHistory">Data History</string>
+    <string name="button_Graph">Graph</string>
+    <string name="button_TreatmentDetails">Treatment Details</string>
+    <string name="button_SaveData">Save Data</string>
+    <string name="text_ideal">Water TDS is ideal</string>
+    <string name="text_accept">Water TDS is Acceptable</string>
+    <string name="text_unaccept">Water TDS is Unacceptable</string>
+    <string name="text_saveprompt">Data Saved!</string>
+    <string name="text_TDSvalue">TDS Value</string>
+    <string name="text_options">Pool Treatment Options</string>
+    <string name="text_record">Record is removed</string>
+    <string name="text_prediction">Prediction</string>
+    <string name="text_predict">Estimated days until pool cleaning: </string>
+    <string name="text_days">days</string>
+    <string name="text_current">Current TDS</string>
+
+    <string name="treatment_options_low_tds">
+        <![CDATA[
+        <ol>
+            <li>Evacuate Pool and change water.</li>
+        </ol>
+        ]]>
+    </string>
+    <string name="treatment_options_medium_tds">
+        <![CDATA[
+        <ol>
+            <li>Add chlorine to the pool.</li>
+            <li>Use an algaecide to control algae growth.</li>
+            <li>Balance pH levels with appropriate chemicals.</li>
+            <li>Use a pool clarifier to improve water clarity.</li>
+            <li>Regularly clean the pool filters.</li>
+        </ol>
+        ]]>
+    </string>
+    <string name="english_radio_button">English</string>
+    <string name="french_radio_button">French</string>
+    <string name="save_button">Save</string>
+
 </resources>

@@ -51,7 +51,7 @@ public class TdsAdapter extends RecyclerView.Adapter<TdsAdapter.MyViewHolder> {
                     DAOTds dao = new DAOTds();
                     dao.remove(tdsData.getKey()).addOnSuccessListener(suc ->
                     {
-                        Toast.makeText(context, "Record is removed", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, context.getString(R.string.text_record), Toast.LENGTH_SHORT).show();
                         notifyItemRemoved(position);
                         list.remove(tdsData);
 

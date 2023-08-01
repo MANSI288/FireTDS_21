@@ -31,8 +31,16 @@
 
         android:background="@drawable/circular_btn"
         android:padding="20dp"
-        android:text="Get Started"
+        android:text="@string/button_GetStarted"
         android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/languageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="change"
         android:textSize="18sp" />
 
 </RelativeLayout>

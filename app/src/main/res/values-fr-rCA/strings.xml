@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">FireTDS</string>
+    <string name="button_GetStarted">Commencer</string>
+    <string name="button_TestWater">Tester l`eau</string>
+    <string name="button_DataHistory">Historique des donnees</string>
+    <string name="button_Graph">Graphique</string>
+    <string name="button_TreatmentDetails">Details du traitement</string>
+    <string name="button_SaveData">Enregister des donnees</string>
+    <string name="text_ideal">L`eau TDS est ideale</string>
+    <string name="text_accept">Le TDS de l`eau est acceptable</string>
+    <string name="text_unaccept">Le TDS de l`eau est inacceptable</string>
+    <string name="text_saveprompt">Donnees enregistrees!</string>
+    <string name="text_TDSvalue">Valeur TDS</string>
+    <string name="text_options">Options de traitement de la piscine</string>
+    <string name="text_record">L`enregistrement est supprime</string>
+    <string name="text_prediction">Pre`diction</string>
+    <string name="text_predict">Jours estimes jusqu`au nettoyage de la piscine </string>
+    <string name="text_days">jours</string>
+    <string name="text_current">Actuelle TDS</string>
+
+    <string name="treatment_options_low_tds">
+        <![CDATA[
+        <ol>
+            <li>Eviacuer la piscine et changer l`eau.</li>
+        </ol>
+        ]]>
+    </string>
+
+    <string name="treatment_options_medium_tds">
+        <![CDATA[
+        <ol>
+            <li>Ajouter du chlore à la piscine.</li>
+            <li>Utiliser un algicide pour contrôler la croissance des algues.</li>
+            <li>Équilibrer les niveaux de pH avec des produits chimiques appropriés.</li>
+            <li>Utiliser un clarifiant pour améliorer la clarté de l`eau.</li>
+            <li>Nettoyer régulièrement les filtres de la piscine.</li>
+        </ol>
+        ]]>
+    </string>
+    <string name="english_radio_button">Anglais</string>
+    <string name="french_radio_button">Français</string>
+    <string name="save_button">Enregistrer</string>
+
+</resources>
