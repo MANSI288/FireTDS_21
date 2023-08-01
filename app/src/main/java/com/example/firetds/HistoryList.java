@@ -20,6 +20,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 public class HistoryList extends AppCompatActivity {
 
@@ -27,6 +29,7 @@ public class HistoryList extends AppCompatActivity {
     DatabaseReference databaseReference;
     TdsAdapter tdsAdapter;
     ArrayList<TdsData> list;
+    Map<String, TdsData> maxTdsPerHourMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,19 +47,27 @@ public class HistoryList extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         list = new ArrayList<>();
+        maxTdsPerHourMap = new HashMap<>();
         tdsAdapter = new TdsAdapter(this, list);
         recyclerView.setAdapter(tdsAdapter);
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                // Clear the list before adding items
                 list.clear();
+                maxTdsPerHourMap.clear();
 
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
                     TdsData tdsData = dataSnapshot.getValue(TdsData.class);
                     tdsData.setKey(dataSnapshot.getKey());
+
                     list.add(tdsData);
+
+                    String hour = tdsData.getDate().split(":")[0];
+
+                    if (!maxTdsPerHourMap.containsKey(hour) || maxTdsPerHourMap.get(hour).getPpm1() < tdsData.getPpm1()) {
+                        maxTdsPerHourMap.put(hour, tdsData);
+                    }
                 }
                 tdsAdapter.notifyDataSetChanged();
             }
@@ -69,23 +80,31 @@ public class HistoryList extends AppCompatActivity {
         predictionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (list.size() < 2) {
+                if (maxTdsPerHourMap.size() < 2) {
                     Toast.makeText(HistoryList.this, "Not enough data to calculate trend.", Toast.LENGTH_LONG).show();
                     return;
                 }
 
-                Collections.sort(list, (tdsData1, tdsData2) -> tdsData1.getDate().compareTo(tdsData2.getDate()));
+                // Create a sorted list of TDS data from the map
+                ArrayList<TdsData> maxTdsList = new ArrayList<>(maxTdsPerHourMap.values());
+                Collections.sort(maxTdsList, (tdsData1, tdsData2) -> tdsData1.getDate().compareTo(tdsData2.getDate()));
 
-                int totalIncrease = list.get(list.size() - 1).getPpm1() - list.get(0).getPpm1();
-                float avgIncreasePerDay = (float) totalIncrease / (list.size() - 1);
+                // Calculate total and average of TDS measurements
+                int total = 0;
+                for (TdsData tdsData : maxTdsList) {
+                    total += tdsData.getPpm1();
+                }
+                float averageTds = (float) total / maxTdsList.size();
 
-                int remainingPpm = 1000 - list.get(list.size() - 1).getPpm1();
-                float estimatedDays = remainingPpm / avgIncreasePerDay;
+                // Calculate remaining PPM and estimated time
+                int remainingPpm = 1000 - maxTdsList.get(maxTdsList.size() - 1).getPpm1();
+                float estimatedHours = remainingPpm / averageTds;
 
                 Intent intent = new Intent(HistoryList.this, PredictionActivity.class);
-                intent.putExtra("prediction", Math.round(estimatedDays));
+                intent.putExtra("prediction", Math.round(estimatedHours));
                 startActivity(intent);
             }
         });
+
     }
 }
