@@ -12,9 +12,9 @@ public class PredictionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prediction);
 
-        int prediction = getIntent().getIntExtra(getString(R.string.text_prediction), 0);
+        int prediction = getIntent().getIntExtra("prediction", 0);
 
         TextView predictionTextView = findViewById(R.id.prediction_text);
-        predictionTextView.setText(getString(R.string.text_predict) + prediction + getString(R.string.text_days));
+        predictionTextView.setText("Estimated days until pool cleaning: " + prediction + " hours");
     }
 }

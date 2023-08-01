@@ -84,7 +84,6 @@ public class HistoryList extends AppCompatActivity {
                     Toast.makeText(HistoryList.this, "Not enough data to calculate trend.", Toast.LENGTH_LONG).show();
                     return;
                 }
-
                 // Create a sorted list of TDS data from the map
                 ArrayList<TdsData> maxTdsList = new ArrayList<>(maxTdsPerHourMap.values());
                 Collections.sort(maxTdsList, (tdsData1, tdsData2) -> tdsData1.getDate().compareTo(tdsData2.getDate()));
@@ -105,6 +104,5 @@ public class HistoryList extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 }
