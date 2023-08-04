@@ -22,7 +22,10 @@ public class PredictionActivity extends AppCompatActivity {
         int prediction = getIntent().getIntExtra("prediction", 0);
 
         TextView predictionTextView = findViewById(R.id.prediction_text);
-        predictionTextView.setText("Estimated days until pool cleaning: " + prediction + " hours");
+        if (prediction <= 0) {
+            predictionTextView.setText("The pool needs cleaning");
+        } else {//new change
+            predictionTextView.setText("Estimated hours until pool cleaning: " + prediction);
+        }
     }
-
 }

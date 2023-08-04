@@ -89,15 +89,16 @@ public class HistoryList extends AppCompatActivity {
                 Collections.sort(maxTdsList, (tdsData1, tdsData2) -> tdsData1.getDate().compareTo(tdsData2.getDate()));
 
                 // Calculate total and average of TDS measurements
-                int total = 0;
+                // CHANGED: Calculate total and average of TDS measurements per hour
+                int totalPpm = 0; // CHANGED: was named "total"
                 for (TdsData tdsData : maxTdsList) {
-                    total += tdsData.getPpm1();
+                    totalPpm += tdsData.getPpm1();
                 }
-                float averageTds = (float) total / maxTdsList.size();
+                float avgPpmPerHour = (float) totalPpm / maxTdsList.size();
 
                 // Calculate remaining PPM and estimated time
                 int remainingPpm = 1000 - maxTdsList.get(maxTdsList.size() - 1).getPpm1();
-                float estimatedHours = remainingPpm / averageTds;
+                float estimatedHours = remainingPpm / avgPpmPerHour; // CHANGED: was named "averageTds"
 
                 Intent intent = new Intent(HistoryList.this, PredictionActivity.class);
                 intent.putExtra("prediction", Math.round(estimatedHours));
