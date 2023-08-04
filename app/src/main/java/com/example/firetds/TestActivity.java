@@ -7,6 +7,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -41,7 +42,7 @@ public class TestActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setTitle("Home");
+        getSupportActionBar().setTitle("");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         treatmentDetailButton = findViewById(R.id.treatmentDetailButton);
@@ -137,5 +138,50 @@ public class TestActivity extends AppCompatActivity {
                 Toast.makeText(TestActivity.this, getString(R.string.text_saveprompt), Toast.LENGTH_SHORT).show();
             }
         });
+    }
+    public void showDropdownMenu(View view) {
+        PopupMenu popupMenu = new PopupMenu(this, view);
+        popupMenu.getMenuInflater().inflate(R.menu.dropdown_menu, popupMenu.getMenu());
+
+        // Handle menu item click events
+        popupMenu.setOnMenuItemClickListener(item -> {
+            if (item.getItemId() == R.id.menu_my_profile) {
+                navigateToMyProfileActivity();
+                return true;
+            } else if (item.getItemId() == R.id.menu_data_history) {
+                navigateToDataHistoryActivity(); // Call the method to handle "Data History" action
+                return true;
+            } else if (item.getItemId() == R.id.menu_predictions) {
+                navigateToPredictionsActivity();
+                return true;
+            }
+            else if (item.getItemId() == R.id.menu_language) {
+                navigateToLanguageActivity();
+                return true;
+            }
+            return false;
+        });
+
+        popupMenu.show();
+    }
+
+    private void navigateToMyProfileActivity() {
+        Intent intent = new Intent(TestActivity.this, MyProfileActivity.class);
+        startActivity(intent);
+    }
+
+    private void navigateToDataHistoryActivity() {
+        // Handle the action for "Data History" here.
+        Intent intent = new Intent(TestActivity.this, HistoryList.class);
+        startActivity(intent);
+    }
+
+    private void navigateToPredictionsActivity() {
+        Intent intent = new Intent(TestActivity.this, PredictionActivity.class);
+        startActivity(intent);
+    }
+    private void navigateToLanguageActivity() {
+        Intent intent = new Intent(TestActivity.this, LanguageSelectionActivity.class);
+        startActivity(intent);
     }
 }

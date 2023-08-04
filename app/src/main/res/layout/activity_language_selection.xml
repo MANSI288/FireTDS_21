@@ -1,35 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:background="@drawable/blueplain">
 
+    <!-- Include the custom header layout at the top -->
+    <include
+        layout="@layout/header"
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" />
+
+    <!-- RadioGroup for language options -->
     <RadioGroup
         android:id="@+id/languageRadioGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_below="@id/header"
+        android:layout_marginTop="16dp"
+        >
 
+        <!-- English RadioButton -->
         <RadioButton
             android:id="@+id/radioEnglish"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/english_radio_button" />
+            android:text="@string/english_radio_button"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:padding="12dp"
+            />
 
+        <!-- French RadioButton -->
         <RadioButton
             android:id="@+id/radioFrench"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/french_radio_button" />
+            android:text="@string/french_radio_button"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:padding="12dp"
+            />
 
     </RadioGroup>
 
+    <!-- Save Button -->
     <Button
         android:id="@+id/saveButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/languageRadioGroup"
         android:text="@string/save_button" />
 
-</LinearLayout>
+    <!-- Other views go here -->
+
+</RelativeLayout>

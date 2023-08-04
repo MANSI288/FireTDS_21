@@ -23,14 +23,14 @@ public class HistoryData extends AppCompatActivity {
     private ListView Data;
     ArrayList<String> dataArrayList;
     DatabaseReference reference;
-    public Toolbar toolbar;
+    public Toolbar toolbar_back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history_data);
-        toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Home");
+        toolbar_back = findViewById(R.id.header);
+        setSupportActionBar(toolbar_back);
+        getSupportActionBar().setTitle("");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Data=findViewById(R.id.Data);

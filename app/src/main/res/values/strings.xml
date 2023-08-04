@@ -40,4 +40,12 @@
     <string name="french_radio_button">French</string>
     <string name="save_button">Save</string>
 
+
+    <string name="header_title">AquaSmart</string>
+    <string name="profile_icon_desc">Profile Icon</string>
+    <string name="option_my_profile">My Profile</string>
+    <string name="option_data_history">Data History</string>
+    <string name="option_predictions">Predictions</string>
+    <string name="option_language">Language</string>
+
 </resources>

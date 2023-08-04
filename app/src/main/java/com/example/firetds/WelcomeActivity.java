@@ -25,15 +25,5 @@ public class WelcomeActivity extends AppCompatActivity {
             }
         });
 
-        // Find the "Select Language" button and set its click listener
-        Button languageButton = findViewById(R.id.languageButton);
-        languageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Start the LanguageSelectionActivity when the button is clicked
-                Intent intent = new Intent(WelcomeActivity.this, LanguageSelectionActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 }

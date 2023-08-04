@@ -27,18 +27,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-     <Button
-        android:id="@+id/HistoryData"
-         android:layout_width="128dp"
-         android:layout_height="126dp"
-         android:layout_marginTop="400dp"
-         android:background="@drawable/circular_btn"
-         android:text="@string/button_DataHistory"
-         android:textColor="@color/black"
-         android:textSize="16sp"
-         app:layout_constraintEnd_toEndOf="parent"
-         app:layout_constraintStart_toStartOf="parent"
-         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/testButton" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

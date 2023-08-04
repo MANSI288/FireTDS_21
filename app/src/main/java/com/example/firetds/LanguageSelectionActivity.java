@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.RadioGroup;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import java.util.Locale;
 
@@ -18,6 +19,13 @@ public class LanguageSelectionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_language_selection);
+
+        //add header functionality
+        Toolbar toolbar_back = findViewById(R.id.header);
+        setSupportActionBar(toolbar_back);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("");
 
         RadioGroup languageRadioGroup = findViewById(R.id.languageRadioGroup);
         Button saveButton = findViewById(R.id.saveButton);

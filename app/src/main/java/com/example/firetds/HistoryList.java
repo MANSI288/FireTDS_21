@@ -36,10 +36,11 @@ public class HistoryList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_historylist);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Main Page");
+        Toolbar toolbar_back = findViewById(R.id.header);
+        setSupportActionBar(toolbar_back);
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("");
 
         recyclerView = findViewById(R.id.historyList);
         databaseReference = FirebaseDatabase.getInstance().getReference("TDSList");

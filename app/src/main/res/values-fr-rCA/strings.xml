@@ -1,20 +1,20 @@
 <resources>
     <string name="app_name">FireTDS</string>
     <string name="button_GetStarted">Commencer</string>
-    <string name="button_TestWater">Tester l`eau</string>
+    <string name="button_TestWater">Tester l\'eau</string>
     <string name="button_DataHistory">Historique des donnees</string>
     <string name="button_Graph">Graphique</string>
     <string name="button_TreatmentDetails">Details du traitement</string>
     <string name="button_SaveData">Enregister des donnees</string>
-    <string name="text_ideal">L`eau TDS est ideale</string>
-    <string name="text_accept">Le TDS de l`eau est acceptable</string>
-    <string name="text_unaccept">Le TDS de l`eau est inacceptable</string>
+    <string name="text_ideal">L\'eau TDS est ideale</string>
+    <string name="text_accept">Le TDS de l\'eau est acceptable</string>
+    <string name="text_unaccept">Le TDS de l\'eau est inacceptable</string>
     <string name="text_saveprompt">Donnees enregistrees!</string>
     <string name="text_TDSvalue">Valeur TDS</string>
     <string name="text_options">Options de traitement de la piscine</string>
-    <string name="text_record">L`enregistrement est supprime</string>
-    <string name="text_prediction">Pre`diction</string>
-    <string name="text_predict">Jours estimes jusqu`au nettoyage de la piscine </string>
+    <string name="text_record">L\'enregistrement est supprime</string>
+    <string name="text_prediction">Pre\'diction</string>
+    <string name="text_predict">Jours estimes jusqu\'au nettoyage de la piscine </string>
     <string name="text_days">jours</string>
     <string name="text_current">Actuelle TDS</string>
 
@@ -40,5 +40,12 @@
     <string name="english_radio_button">Anglais</string>
     <string name="french_radio_button">Français</string>
     <string name="save_button">Enregistrer</string>
+
+    <string name="header_title">AquaSmart</string>
+    <string name="profile_icon_desc">Icône de profil</string>
+    <string name="option_my_profile">Mon profil</string>
+    <string name="option_data_history">Historique des données</string>
+    <string name="option_predictions">Prédictions</string>
+    <string name="option_language">Langue</string>
 
 </resources>

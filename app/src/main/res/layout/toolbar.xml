@@ -1,14 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:id="@+id/header_toolbar"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#5B8A8A8A"
     android:elevation="4dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:popupTheme="@style/Theme.AppCompat.Light"
-
+    android:gravity="center_vertical"
     >
 
 
-</androidx.appcompat.widget.Toolbar>
+<TextView
+android:id="@+id/header_title"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/header_title"
+android:textColor="#FFFFFF"
+android:textSize="22sp"
+android:padding="10dp"
+    android:textAlignment="center"
+    />
+
+
+<ImageView
+android:id="@+id/profile_icon"
+android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:src="@drawable/profileicon"
+    android:layout_gravity="end"
+    android:padding="8dp"
+    android:clickable="true"
+    android:onClick="showDropdownMenu"
+    android:contentDescription="@string/profile_icon_desc" />
+
+    </androidx.appcompat.widget.Toolbar>

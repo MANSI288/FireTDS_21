@@ -16,10 +16,11 @@ public class TreatmentOptionsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_treatment_options);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Current TDS");
+        Toolbar toolbar_back = findViewById(R.id.header);
+        setSupportActionBar(toolbar_back);
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("");
 
         // Get the ppm value from intent extras
         int ppm = getIntent().getIntExtra("ppm", 0);
@@ -39,7 +40,7 @@ public class TreatmentOptionsActivity extends AppCompatActivity {
                     "</ol>";
         } else  {
             treatmentOptions = "<ol>" +
-                    "<li>Eviacuate Pool and change water.</li>" +
+                    "<li>Evacuate Pool and change water.</li>" +
                     "</ol>";
 
         }
