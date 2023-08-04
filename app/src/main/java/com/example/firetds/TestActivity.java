@@ -85,12 +85,10 @@ public class TestActivity extends AppCompatActivity {
                 if (ppm < 100) {
                     InsightTextView.setText(getString(R.string.text_ideal));
                     treatmentDetailButton.setVisibility(View.GONE);
-                }
-                if(ppm<150){
+                } else if (ppm < 150) {
                     InsightTextView.setText(getString(R.string.text_accept));
                     treatmentDetailButton.setVisibility(View.VISIBLE);
-                }
-                else {
+                } else {
                     InsightTextView.setText(getString(R.string.text_unaccept));
                     treatmentDetailButton.setVisibility(View.VISIBLE);
                 }
@@ -118,12 +116,9 @@ public class TestActivity extends AppCompatActivity {
 
                 if (ppm < 100) {
                     insight = getString(R.string.text_ideal);
-
-                }
-                if (ppm < 150) {
+                } else if (ppm < 150) {
                     insight = getString(R.string.text_accept);
-
-                }else{
+                } else {
                     insight = getString(R.string.text_unaccept);
                 }
 
@@ -131,7 +126,7 @@ public class TestActivity extends AppCompatActivity {
                 cal.setTime(new java.util.Date());
                 int hour = cal.get(java.util.Calendar.HOUR_OF_DAY);
 
-                TdsData obj = new TdsData(date,insight, ppm1, hour);
+                TdsData obj = new TdsData(date, insight, ppm1, hour);
                 myRef.push().setValue(obj);
 
                 // Show a toast message to indicate data is saved
@@ -139,6 +134,7 @@ public class TestActivity extends AppCompatActivity {
             }
         });
     }
+
     public void showDropdownMenu(View view) {
         PopupMenu popupMenu = new PopupMenu(this, view);
         popupMenu.getMenuInflater().inflate(R.menu.dropdown_menu, popupMenu.getMenu());
@@ -180,8 +176,11 @@ public class TestActivity extends AppCompatActivity {
         Intent intent = new Intent(TestActivity.this, PredictionActivity.class);
         startActivity(intent);
     }
+
     private void navigateToLanguageActivity() {
         Intent intent = new Intent(TestActivity.this, LanguageSelectionActivity.class);
         startActivity(intent);
     }
+
+
 }

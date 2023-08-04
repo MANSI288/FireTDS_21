@@ -5,7 +5,7 @@
     <string name="button_DataHistory">Historique des donnees</string>
     <string name="button_Graph">Graphique</string>
     <string name="button_TreatmentDetails">Details du traitement</string>
-    <string name="button_SaveData">Enregister des donnees</string>
+    <string name="button_SaveData">Sauvegarder</string>
     <string name="text_ideal">L\'eau TDS est ideale</string>
     <string name="text_accept">Le TDS de l\'eau est acceptable</string>
     <string name="text_unaccept">Le TDS de l\'eau est inacceptable</string>
@@ -39,7 +39,7 @@
     </string>
     <string name="english_radio_button">Anglais</string>
     <string name="french_radio_button">Français</string>
-    <string name="save_button">Enregistrer</string>
+    <string name="save_button">Sauvegarder</string>
 
     <string name="header_title">AquaSmart</string>
     <string name="profile_icon_desc">Icône de profil</string>

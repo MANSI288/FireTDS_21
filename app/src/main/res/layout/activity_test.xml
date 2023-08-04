@@ -5,18 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TestActivity"
-    android:background="@drawable/blueplain"
-    >
+    android:background="@drawable/blueplain">
 
+    <!-- Toolbar -->
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        />
-
+    <!-- TDS Title -->
     <TextView
         android:id="@+id/tdsTitleText"
         android:layout_width="227dp"
@@ -30,10 +29,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
+    <!-- TDS Value -->
     <TextView
         android:id="@+id/tdsValueDisplay"
         android:layout_width="150dp"
         android:layout_height="59dp"
+
         android:hint="@string/text_TDSvalue"
         android:textStyle="bold"
         android:textSize="24sp"
@@ -42,21 +43,23 @@
         app:layout_constraintStart_toStartOf="@+id/tdsTitleText"
         app:layout_constraintEnd_toEndOf="@+id/tdsTitleText" />
 
+    <!-- Insight -->
     <TextView
         android:id="@+id/InsightTextView"
-        android:layout_width="313dp"
+        android:layout_width="0dp"
         android:layout_height="97dp"
         android:layout_marginTop="40dp"
+        android:layout_marginLeft="60dp"
         android:hint="TDS Insight"
         android:textStyle="bold"
         android:textSize="24sp"
         android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/treatmentDetailButton"
-        app:layout_constraintEnd_toEndOf="@+id/tdsValueDisplay"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="@+id/tdsValueDisplay"
         app:layout_constraintTop_toBottomOf="@+id/tdsValueDisplay" />
 
+    <!-- Treatment Detail Button -->
     <Button
         android:id="@+id/treatmentDetailButton"
         android:layout_width="214dp"
@@ -70,17 +73,16 @@
         app:layout_constraintStart_toStartOf="@+id/InsightTextView"
         app:layout_constraintTop_toBottomOf="@+id/InsightTextView" />
 
+    <!-- Save Button -->
     <Button
         android:id="@+id/saveButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
         android:text="@string/button_SaveData"
-        android:layout_marginLeft="300dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/treatmentDetailButton"
         app:layout_constraintTop_toBottomOf="@+id/treatmentDetailButton"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_bias="0.565" />
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

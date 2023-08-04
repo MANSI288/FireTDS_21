@@ -1,13 +1,11 @@
 package com.example.firetds;
 
-import androidx.appcompat.app.ActionBar;
+import android.content.Intent;
+import android.os.Bundle;
+import android.text.Html;
+import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
-import android.content.Intent;
-import android.text.Html;
-import android.os.Bundle;
-import android.widget.TextView;
 
 public class TreatmentOptionsActivity extends AppCompatActivity {
 
@@ -20,7 +18,7 @@ public class TreatmentOptionsActivity extends AppCompatActivity {
         setSupportActionBar(toolbar_back);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("");
+        getSupportActionBar().setTitle(getString(R.string.header_title));
 
         // Get the ppm value from intent extras
         int ppm = getIntent().getIntExtra("ppm", 0);
@@ -31,18 +29,9 @@ public class TreatmentOptionsActivity extends AppCompatActivity {
         // Adjust the treatment options based on the ppm value
         String treatmentOptions;
         if (ppm >= 1000 && ppm < 1500) {
-            treatmentOptions = "<ol>" +
-                    "<li>Add chlorine to the pool.</li>" +
-                    "<li>Use an algaecide to control algae growth.</li>" +
-                    "<li>Balance pH levels with appropriate chemicals.</li>" +
-                    "<li>Use a pool clarifier to improve water clarity.</li>" +
-                    "<li>Regularly clean the pool filters.</li>" +
-                    "</ol>";
-        } else  {
-            treatmentOptions = "<ol>" +
-                    "<li>Evacuate Pool and change water.</li>" +
-                    "</ol>";
-
+            treatmentOptions = getString(R.string.treatment_options_medium_tds);
+        } else {
+            treatmentOptions = getString(R.string.treatment_options_low_tds);
         }
 
         // Display the treatment options in the TextView
