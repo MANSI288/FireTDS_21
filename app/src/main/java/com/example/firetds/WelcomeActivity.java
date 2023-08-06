@@ -16,11 +16,21 @@ public class WelcomeActivity extends AppCompatActivity {
 
         // Find the "Get Started" button and set its click listener
         Button getStartedButton = findViewById(R.id.getStartedButton);
+
+        Button createAccountButton = findViewById(R.id.CreateAccountButton);
         getStartedButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Start the TestActivity when the button is clicked
-                Intent intent = new Intent(WelcomeActivity.this, HomeActivity.class);
+                Intent intent = new Intent(WelcomeActivity.this, Login.class);
+                startActivity(intent);
+
+            }
+        });
+        createAccountButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(WelcomeActivity.this, CreateAccountActivity.class);
                 startActivity(intent);
             }
         });
