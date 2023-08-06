@@ -14,7 +14,7 @@ import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class CreateAccountActivity<User> extends AppCompatActivity {
+public class CreateAccountActivity extends AppCompatActivity {
     //public Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
