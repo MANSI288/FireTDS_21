@@ -22,19 +22,33 @@
 
     <Button
         android:id="@+id/getStartedButton"
-        android:layout_width="wrap_content"
-        android:layout_height="152dp"
-        android:layout_marginTop="450dp"
+        android:layout_width="137dp"
+        android:layout_height="137dp"
+        android:layout_alignParentTop="true"
         android:layout_marginLeft="135dp"
 
 
-
+        android:layout_marginTop="391dp"
         android:background="@drawable/circular_btn"
         android:padding="20dp"
-        android:text="@string/button_GetStarted"
+        android:text="login"
         android:textColor="@color/black"
         android:textSize="18sp" />
 
+    <Button
+        android:id="@+id/CreateAccountButton"
+        android:layout_width="137dp"
+        android:layout_height="137dp"
+        android:layout_below="@+id/getStartedButton"
+
+
+        android:layout_marginLeft="135dp"
+        android:layout_marginTop="47dp"
+        android:background="@drawable/circular_btn"
+        android:padding="20dp"
+        android:text="Sign In"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
 
 
 </RelativeLayout>
