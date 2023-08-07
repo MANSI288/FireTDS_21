@@ -31,7 +31,7 @@ public class HomeActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("");
 
         // Enable the back button (up button)
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
         // Check if the testButton is not null before setting the click listener
