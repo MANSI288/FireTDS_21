@@ -62,10 +62,7 @@ public class HomeActivity extends AppCompatActivity {
 
         // Handle menu item click events
         popupMenu.setOnMenuItemClickListener(item -> {
-            if (item.getItemId() == R.id.menu_my_profile) {
-                navigateToMyProfileActivity();
-                return true;
-            } else if (item.getItemId() == R.id.menu_data_history) {
+            if (item.getItemId() == R.id.menu_data_history) {
                 navigateToDataHistoryActivity(); // Call the method to handle "Data History" action
                 return true;
             } else if (item.getItemId() == R.id.menu_predictions) {
@@ -74,6 +71,11 @@ public class HomeActivity extends AppCompatActivity {
             }
             else if (item.getItemId() == R.id.menu_language) {
                 navigateToLanguageActivity();
+                return true;
+            }
+            else if (item.getItemId() == R.id.menu_log_out) {
+                Intent intent = new Intent(HomeActivity.this, WelcomeActivity.class);
+                startActivity(intent);
                 return true;
             }
             return false;
