@@ -82,10 +82,10 @@ public class TestActivity extends AppCompatActivity {
 
                 ppm = dataSnapshot.child("ppm").getValue(int.class);
 
-                if (ppm < 100) {
+                if (ppm < 1000) {
                     InsightTextView.setText(getString(R.string.text_ideal));
                     treatmentDetailButton.setVisibility(View.GONE);
-                } else if (ppm < 150) {
+                } else if (ppm >1000 && ppm < 1500) {
                     InsightTextView.setText(getString(R.string.text_accept));
                     treatmentDetailButton.setVisibility(View.VISIBLE);
                 } else {
@@ -114,9 +114,9 @@ public class TestActivity extends AppCompatActivity {
                 int ppm1 = ppm;
                 String insight;
 
-                if (ppm < 100) {
+                if (ppm < 1000) {
                     insight = getString(R.string.text_ideal);
-                } else if (ppm < 150) {
+                } else if (ppm >1000 && ppm < 1500) {
                     insight = getString(R.string.text_accept);
                 } else {
                     insight = getString(R.string.text_unaccept);
