@@ -25,7 +25,7 @@ public class PredictionActivity extends AppCompatActivity {
         if (prediction <= 0) {
             predictionTextView.setText("The pool needs cleaning");
         } else {//new change
-            predictionTextView.setText("Estimated hours until pool cleaning: " + prediction + "hours");
+            predictionTextView.setText("Estimated hours until pool cleaning: " + prediction + " hours");
         }
     }
 }

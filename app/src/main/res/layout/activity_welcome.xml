@@ -28,7 +28,7 @@
         android:layout_marginLeft="135dp"
 
 
-        android:layout_marginTop="391dp"
+        android:layout_marginTop="288dp"
         android:background="@drawable/circular_btn"
         android:padding="20dp"
         android:text="login"
