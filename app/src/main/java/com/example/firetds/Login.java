@@ -32,7 +32,7 @@ public class Login extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Sign In");
 
-       // mDatabase = FirebaseDatabase.getInstance().getReference("TDSAccount");
+        // mDatabase = FirebaseDatabase.getInstance().getReference("TDSAccount");
         Username = findViewById(R.id.enterUserName);
         Password = findViewById(R.id.enterPassword);
         btnSignIn = findViewById(R.id.buttonSignIn);
