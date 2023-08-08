@@ -6,9 +6,9 @@
     <string name="button_Graph">Graphique</string>
     <string name="button_TreatmentDetails">Details du traitement</string>
     <string name="button_SaveData">Sauvegarder</string>
-    <string name="text_ideal">L\'eau TDS est ideale</string>
-    <string name="text_accept">Le TDS de l\'eau est acceptable</string>
-    <string name="text_unaccept">Le TDS de l\'eau est inacceptable</string>
+    <string name="text_ideal">Ideale TDS</string>
+    <string name="text_accept">Acceptable TDS</string>
+    <string name="text_unaccept">Inacceptable TDS</string>
     <string name="text_saveprompt">Donnees enregistrees!</string>
     <string name="text_TDSvalue">Valeur TDS</string>
     <string name="text_options">Options de traitement de la piscine</string>
@@ -55,5 +55,13 @@
     <string name="signup">Se Connecter </string>
     <string name="logout">Déconnexion.</string>
     <string name="support">Contacter le support</string>
+
+    <string name="toast1">Compte créé avec succès !</string>
+    <string name="toast2">Veuillez entrer à la fois le nom d\'utilisateur et le mot de passe.</string>
+    <string name="toast3">Connexion réussie !</string>
+    <string name="toast4">Nom d\'utilisateur ou mot de passe invalide.</string>
+    <string name="toast5">Échec de lecture de la base de données.</string>
+
+    <string name="text1">Choisir la langue</string>
 
 </resources>

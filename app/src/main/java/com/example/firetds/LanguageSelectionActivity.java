@@ -6,6 +6,7 @@ import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.PopupMenu;
@@ -55,7 +56,7 @@ public class LanguageSelectionActivity extends AppCompatActivity {
             // Reload the main screen or the desired activity to apply the language change
             Intent intent = new Intent(LanguageSelectionActivity.this, Login.class);
             startActivity(intent);
-            finish(); // Finish this activity to prevent going back to the language selection screen
+           // finish(); // Finish this activity to prevent going back to the language selection screen
         });
     }
 
@@ -65,15 +66,16 @@ public class LanguageSelectionActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString("selected_language", selectedLanguage);
         editor.apply();
+        Log.d("LanguageDebug", "Selected Language saved: " + selectedLanguage);
     }
 
-    // Method to update the app's locale based on the selected language
     private void updateAppLocale(String selectedLanguage) {
         Locale locale = new Locale(selectedLanguage);
         Locale.setDefault(locale);
         Configuration config = new Configuration();
         config.locale = locale;
         getResources().updateConfiguration(config, getResources().getDisplayMetrics());
+        Log.d("LanguageDebug", "App Locale updated to: " + selectedLanguage);
     }
 
     public void showDropdownMenu(View view) {

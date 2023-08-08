@@ -6,9 +6,9 @@
     <string name="button_Graph">Graph</string>
     <string name="button_TreatmentDetails">Treatment Details</string>
     <string name="button_SaveData">Save Data</string>
-    <string name="text_ideal">Water TDS is ideal</string>
-    <string name="text_accept">Water TDS is Acceptable</string>
-    <string name="text_unaccept">Water TDS is Unacceptable</string>
+    <string name="text_ideal">Ideal TDS</string>
+    <string name="text_accept">Acceptable TDS</string>
+    <string name="text_unaccept">Unacceptable TDS</string>
     <string name="text_saveprompt">Data Saved!</string>
     <string name="text_TDSvalue">TDS Value</string>
     <string name="text_options">Pool Treatment Options</string>
@@ -51,9 +51,16 @@
 
     <string name="username">UserName</string>
     <string name="password">Password</string>
-    <string name="login">Log In</string>
+    <string name="login">Login</string>
     <string name="signup">Sign Up</string>
     <string name="logout">Log Out</string>
     <string name="support">Contact Support</string>
+
+    <string name="toast1">Account created successfully!</string>
+    <string name="toast2">Please enter both username and password.</string>
+    <string name="toast3">Sign in successful!</string>
+    <string name="toast4">Invalid username or password.</string>
+    <string name="toast5">Failed to read database.</string>
+    <string name="text1">Select Language</string>
 
 </resources>
