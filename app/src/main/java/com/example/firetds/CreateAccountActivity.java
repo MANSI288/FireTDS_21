@@ -46,7 +46,7 @@ public class CreateAccountActivity extends AppCompatActivity {
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
                     DatabaseReference myRef = database.getReference("TDSAccount");
                     myRef.push().setValue(user);
-                    Intent intent = new Intent(CreateAccountActivity.this, WelcomeActivity.class);
+                    Intent intent = new Intent(CreateAccountActivity.this, Login.class);
                     startActivity(intent);
 
                     Toast.makeText(CreateAccountActivity.this, "Account created successfully!", Toast.LENGTH_SHORT).show();

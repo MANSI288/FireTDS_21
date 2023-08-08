@@ -26,16 +26,15 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Toolbar toolbar = findViewById(R.id.Toolbar);
-        setSupportActionBar(toolbar);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Sign In");
+
+
 
         // mDatabase = FirebaseDatabase.getInstance().getReference("TDSAccount");
         Username = findViewById(R.id.enterUserName);
         Password = findViewById(R.id.enterPassword);
         btnSignIn = findViewById(R.id.buttonSignIn);
+        Button createAccountButton = findViewById(R.id.buttonSignUp);
 
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,6 +78,14 @@ public class Login extends AppCompatActivity {
                 } else {
                     Toast.makeText(Login.this, "Please enter both username and password.", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+        createAccountButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Login.this, CreateAccountActivity.class);
+                startActivity(intent);
             }
         });
     }

@@ -3,56 +3,58 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/blueplain">
+    >
 
     <!-- Include the custom header layout at the top -->
     <include
-        layout="@layout/header"
-        android:id="@+id/header"
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true" />
+         />
 
     <!-- RadioGroup for language options -->
+
+    <!-- Save Button -->
     <RadioGroup
         android:id="@+id/languageRadioGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_below="@id/header"
-        android:layout_marginTop="16dp"
-        >
+        android:layout_below="@id/toolbar"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="48dp"
+        android:orientation="vertical">
 
         <!-- English RadioButton -->
         <RadioButton
             android:id="@+id/radioEnglish"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/english_radio_button"
-            android:textSize="18sp"
-            android:textColor="@color/white"
             android:padding="12dp"
-            />
+            android:text="@string/english_radio_button"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
 
         <!-- French RadioButton -->
         <RadioButton
             android:id="@+id/radioFrench"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/french_radio_button"
-            android:textSize="18sp"
-            android:textColor="@color/white"
             android:padding="12dp"
-            />
+            android:text="@string/french_radio_button"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
 
     </RadioGroup>
 
-    <!-- Save Button -->
     <Button
         android:id="@+id/saveButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/languageRadioGroup"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:text="@string/save_button" />
 
     <!-- Other views go here -->

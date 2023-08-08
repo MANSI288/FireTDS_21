@@ -14,8 +14,9 @@
     <string name="text_options">Options de traitement de la piscine</string>
     <string name="text_record">L\'enregistrement est supprime</string>
     <string name="text_prediction">Pre\'diction</string>
-    <string name="text_predict">Jours estimes jusqu\'au nettoyage de la piscine </string>
-    <string name="text_days">jours</string>
+    <string name="clean_now">la piscine a besoin d\'être nettoyée.</string>
+    <string name="text_predict">Temps estimé jusqu\'au nettoyage de la piscine </string>
+    <string name="text_days">heures</string>
     <string name="text_current">Actuelle TDS</string>
 
     <string name="treatment_options_low_tds">
@@ -29,11 +30,11 @@
     <string name="treatment_options_medium_tds">
         <![CDATA[
         <ol>
-            <li>Ajouter du chlore à la piscine.</li>
-            <li>Utiliser un algicide pour contrôler la croissance des algues.</li>
-            <li>Équilibrer les niveaux de pH avec des produits chimiques appropriés.</li>
-            <li>Utiliser un clarifiant pour améliorer la clarté de l`eau.</li>
-            <li>Nettoyer régulièrement les filtres de la piscine.</li>
+            <li>Ajouter du chlore à la piscine.</li><br>
+            <li>Utiliser un algicide pour contrôler la croissance des algues.</li><br>
+            <li>Équilibrer les niveaux de pH avec des produits chimiques appropriés.</li><br>
+            <li>Utiliser un clarifiant pour améliorer la clarté de l`eau.</li><br>
+            <li>Nettoyer régulièrement les filtres de la piscine.</li><br>
         </ol>
         ]]>
     </string>
@@ -47,5 +48,12 @@
     <string name="option_data_history">Historique des données</string>
     <string name="option_predictions">Prédictions</string>
     <string name="option_language">Langue</string>
+
+    <string name="username">Nom d’utilisateur </string>
+    <string name="password">Mot de passe</string>
+    <string name="login">Créer un Compte</string>
+    <string name="signup">Se Connecter </string>
+    <string name="logout">Déconnexion.</string>
+    <string name="support">Contacter le support</string>
 
 </resources>

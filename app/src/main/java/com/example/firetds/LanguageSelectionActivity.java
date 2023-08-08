@@ -3,9 +3,12 @@ package com.example.firetds;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.view.View;
 import android.widget.Button;
+import android.widget.PopupMenu;
 import android.widget.RadioGroup;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,7 +24,7 @@ public class LanguageSelectionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_language_selection);
 
         //add header functionality
-        Toolbar toolbar_back = findViewById(R.id.header);
+        Toolbar toolbar_back = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar_back);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -50,7 +53,7 @@ public class LanguageSelectionActivity extends AppCompatActivity {
             updateAppLocale(selectedLanguage);
 
             // Reload the main screen or the desired activity to apply the language change
-            Intent intent = new Intent(LanguageSelectionActivity.this, WelcomeActivity.class);
+            Intent intent = new Intent(LanguageSelectionActivity.this, Login.class);
             startActivity(intent);
             finish(); // Finish this activity to prevent going back to the language selection screen
         });
@@ -71,6 +74,49 @@ public class LanguageSelectionActivity extends AppCompatActivity {
         Configuration config = new Configuration();
         config.locale = locale;
         getResources().updateConfiguration(config, getResources().getDisplayMetrics());
+    }
+
+    public void showDropdownMenu(View view) {
+        PopupMenu popupMenu = new PopupMenu(this, view);
+        popupMenu.getMenuInflater().inflate(R.menu.dropdown_menu, popupMenu.getMenu());
+
+        // Handle menu item click events
+        popupMenu.setOnMenuItemClickListener(item -> {
+            if (item.getItemId() == R.id.menu_predictions) {
+                navigateToPredictionsActivity();
+                return true;
+            } else if (item.getItemId() == R.id.menu_log_out) {
+                Intent intent = new Intent(LanguageSelectionActivity.this, Login.class);
+                startActivity(intent);
+                return true;
+            } else if (item.getItemId() == R.id.contact_support) {
+                openSupportEmailClient();
+
+                return true;
+            }
+            return false;
+        });
+
+        popupMenu.show();
+    }
+
+    private void openSupportEmailClient() {
+        String emailAddress = "support@example.com";
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:" + emailAddress));
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Support Request");
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+    }
+
+
+
+
+
+    private void navigateToPredictionsActivity() {
+        Intent intent = new Intent(LanguageSelectionActivity.this, PredictionActivity.class);
+        startActivity(intent);
     }
 }
 

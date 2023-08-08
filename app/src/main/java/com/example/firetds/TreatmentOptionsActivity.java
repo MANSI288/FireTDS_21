@@ -36,6 +36,6 @@ public class TreatmentOptionsActivity extends AppCompatActivity {
 
         // Display the treatment options in the TextView
         treatmentOptionsTextView.setText(Html.fromHtml(treatmentOptions, Html.FROM_HTML_MODE_COMPACT));
-        treatmentOptionsTextView.setTextColor(getResources().getColor(android.R.color.white));
+        treatmentOptionsTextView.setTextColor(getResources().getColor(android.R.color.black));
     }
 }

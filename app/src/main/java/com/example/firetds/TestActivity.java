@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -141,47 +142,43 @@ public class TestActivity extends AppCompatActivity {
 
         // Handle menu item click events
         popupMenu.setOnMenuItemClickListener(item -> {
-            if (item.getItemId() == R.id.menu_data_history) {
-                navigateToDataHistoryActivity(); // Call the method to handle "Data History" action
-                return true;
-            } else if (item.getItemId() == R.id.menu_predictions) {
+            if (item.getItemId() == R.id.menu_predictions) {
                 navigateToPredictionsActivity();
                 return true;
-            }
-            else if (item.getItemId() == R.id.menu_language) {
-                navigateToLanguageActivity();
+            } else if (item.getItemId() == R.id.menu_log_out) {
+                Intent intent = new Intent(TestActivity.this, Login.class);
+                startActivity(intent);
                 return true;
-            }else if (item.getItemId() == R.id.menu_log_out) {
-                 Intent intent = new Intent(TestActivity.this, WelcomeActivity.class);
-                 startActivity(intent);
-                 return true;
-             }
+            } else if (item.getItemId() == R.id.contact_support) {
+                openSupportEmailClient();
+
+                return true;
+            }
             return false;
         });
 
         popupMenu.show();
     }
 
-    private void navigateToMyProfileActivity() {
-        Intent intent = new Intent(TestActivity.this, MyProfileActivity.class);
-        startActivity(intent);
+    private void openSupportEmailClient() {
+        String emailAddress = "support@example.com";
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:" + emailAddress));
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Support Request");
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
     }
 
-    private void navigateToDataHistoryActivity() {
-        // Handle the action for "Data History" here.
-        Intent intent = new Intent(TestActivity.this, HistoryList.class);
-        startActivity(intent);
-    }
+
+
 
     private void navigateToPredictionsActivity() {
         Intent intent = new Intent(TestActivity.this, PredictionActivity.class);
         startActivity(intent);
     }
 
-    private void navigateToLanguageActivity() {
-        Intent intent = new Intent(TestActivity.this, LanguageSelectionActivity.class);
-        startActivity(intent);
-    }
+
 
 
 }

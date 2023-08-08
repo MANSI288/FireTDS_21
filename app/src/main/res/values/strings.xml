@@ -14,8 +14,9 @@
     <string name="text_options">Pool Treatment Options</string>
     <string name="text_record">Record is removed</string>
     <string name="text_prediction">Prediction</string>
-    <string name="text_predict">Estimated days until pool cleaning: </string>
-    <string name="text_days">days</string>
+    <string name="clean_now">The pool needs cleaning</string>
+    <string name="text_predict">Estimated time until pool cleaning: </string>
+    <string name="text_days">hours</string>
     <string name="text_current">Current TDS</string>
 
     <string name="treatment_options_low_tds">
@@ -28,11 +29,11 @@
     <string name="treatment_options_medium_tds">
         <![CDATA[
         <ol>
-            <li>Add chlorine to the pool.</li>
-            <li>Use an algaecide to control algae growth.</li>
-            <li>Balance pH levels with appropriate chemicals.</li>
-            <li>Use a pool clarifier to improve water clarity.</li>
-            <li>Regularly clean the pool filters.</li>
+            <li>Add chlorine to the pool.</li><br>
+            <li>Use an algaecide to control algae growth.</li><br>
+            <li>Balance pH levels with appropriate chemicals.</li><br>
+            <li>Use a pool clarifier to improve water clarity.</li><br>
+            <li>Regularly clean the pool filters.</li><br>
         </ol>
         ]]>
     </string>
@@ -47,5 +48,12 @@
     <string name="option_data_history">Data History</string>
     <string name="option_predictions">Predictions</string>
     <string name="option_language">Language</string>
+
+    <string name="username">UserName</string>
+    <string name="password">Password</string>
+    <string name="login">Log In</string>
+    <string name="signup">Sign Up</string>
+    <string name="logout">Log Out</string>
+    <string name="support">Contact Support</string>
 
 </resources>

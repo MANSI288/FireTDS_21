@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@drawable/blueplain"
+
     >
 
     <!-- Toolbar -->
@@ -23,7 +23,7 @@
         android:layout_width="412dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="@color/white_tr"
+
         android:padding="21dp"
         android:text="@string/text_options"
         android:textAlignment="center"
@@ -41,8 +41,8 @@
         android:padding="16dp"
         android:textSize="18sp"
     android:lineSpacingExtra="8sp"
-        android:textColor="@android:color/white"
-        android:background="@drawable/bullet_txt_bg"
+        android:textColor="@color/black"
+
         app:layout_constraintTop_toBottomOf="@id/headingTextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

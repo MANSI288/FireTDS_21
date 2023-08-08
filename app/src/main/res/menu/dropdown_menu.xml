@@ -1,15 +1,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-        android:id="@+id/menu_data_history"
-        android:title="@string/option_data_history" />
+
     <item
         android:id="@+id/menu_predictions"
         android:title="@string/option_predictions" />
-    <item
-        android:id="@+id/menu_language"
-        android:title="@string/option_language" />
+
     <item
         android:id="@+id/menu_log_out"
-        android:title="log out" />
+        android:title="@string/logout" />
+
+    <item
+        android:id="@+id/contact_support"
+        android:title="@string/support"/>
+
 </menu>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/blueplain"
+
     tools:context=".HomeActivity">
 
     <!-- Add the Toolbar -->
@@ -17,16 +17,44 @@
 
     <Button
         android:id="@+id/testButton"
-        android:layout_width="128dp"
-        android:layout_height="126dp"
-        android:layout_marginTop="192dp"
-        android:background="@drawable/circular_btn"
+        android:layout_width="147dp"
+        android:layout_height="71dp"
+
+        android:layout_marginTop="180dp"
         android:text="@string/button_TestWater"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <Button
+        android:id="@+id/DataHistoryButton"
+        android:layout_width="147dp"
+        android:layout_height="72dp"
+
+        android:layout_marginTop="64dp"
+        android:text="@string/button_DataHistory"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/testButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/testButton"
+        app:layout_constraintTop_toBottomOf="@+id/testButton" />
+
+    <Button
+        android:id="@+id/language_options"
+        android:layout_width="147dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="64dp"
+        android:text="@string/option_language"
+        android:textColor="@color/black"
+
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/DataHistoryButton"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/DataHistoryButton"
+        app:layout_constraintTop_toBottomOf="@+id/DataHistoryButton" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,23 +5,22 @@
     android:id="@+id/header_toolbar"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#5B8A8A8A"
+    android:background="#2c676d"
     android:elevation="4dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-    android:gravity="center_vertical"
+    android:gravity="center_horizontal"
     >
 
 
-<TextView
-android:id="@+id/header_title"
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-android:text="@string/header_title"
-android:textColor="#FFFFFF"
-android:textSize="22sp"
-android:padding="10dp"
-    android:textAlignment="center"
-    />
+    <TextView
+        android:id="@+id/header_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="@string/header_title"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp" />
 
 
 <ImageView

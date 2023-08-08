@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HistoryList"
-    android:background="@drawable/blueplain"
+
     >
 
     <!-- Add the Toolbar_back -->
     <include
-        android:id="@+id/header"
-        layout="@layout/header"
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,7 +23,7 @@
         app:layout_constraintBottom_toTopOf="@+id/predictionButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/header" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
 
 

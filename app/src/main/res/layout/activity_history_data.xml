@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HistoryData"
-    android:background="@drawable/blueplain">
+    >
 
     <include
         android:id="@+id/header"
@@ -19,7 +19,7 @@
         android:layout_width="412dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="@color/white_tr"
+        android:background="@color/white"
         android:padding="21dp"
         android:text="History"
         android:textAlignment="center"
@@ -36,7 +36,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:padding="21dp"
-        android:background="@color/white_tr"
+        android:background="@color/white"
 
         android:textAlignment="center"
         android:textColor="@color/white"

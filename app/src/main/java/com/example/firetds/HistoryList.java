@@ -1,9 +1,11 @@
 package com.example.firetds;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.PopupMenu;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -36,7 +38,7 @@ public class HistoryList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_historylist);
 
-        Toolbar toolbar_back = findViewById(R.id.header);
+        Toolbar toolbar_back = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar_back);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -58,7 +60,7 @@ public class HistoryList extends AppCompatActivity {
                 list.clear();
                 maxTdsPerHourMap.clear();
 
-                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     TdsData tdsData = dataSnapshot.getValue(TdsData.class);
                     tdsData.setKey(dataSnapshot.getKey());
 
@@ -72,8 +74,10 @@ public class HistoryList extends AppCompatActivity {
                 }
                 tdsAdapter.notifyDataSetChanged();
             }
+
             @Override
-            public void onCancelled(@NonNull DatabaseError error) { }
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
         });
 
         Button predictionButton = findViewById(R.id.predictionButton);
@@ -106,4 +110,49 @@ public class HistoryList extends AppCompatActivity {
             }
         });
     }
+
+    public void showDropdownMenu(View view) {
+        PopupMenu popupMenu = new PopupMenu(this, view);
+        popupMenu.getMenuInflater().inflate(R.menu.dropdown_menu, popupMenu.getMenu());
+
+        // Handle menu item click events
+        popupMenu.setOnMenuItemClickListener(item -> {
+            if (item.getItemId() == R.id.menu_predictions) {
+                navigateToPredictionsActivity();
+                return true;
+            } else if (item.getItemId() == R.id.menu_log_out) {
+                Intent intent = new Intent(HistoryList.this, Login.class);
+                startActivity(intent);
+                return true;
+            } else if (item.getItemId() == R.id.contact_support) {
+                openSupportEmailClient();
+
+                return true;
+            }
+            return false;
+        });
+
+        popupMenu.show();
+    }
+
+    private void openSupportEmailClient() {
+        String emailAddress = "support@example.com";
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:" + emailAddress));
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Support Request");
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+    }
+
+
+
+
+
+    private void navigateToPredictionsActivity() {
+        Intent intent = new Intent(HistoryList.this, PredictionActivity.class);
+        startActivity(intent);
+    }
+
+
 }
