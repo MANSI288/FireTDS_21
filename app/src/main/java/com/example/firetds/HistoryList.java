@@ -99,7 +99,7 @@ public class HistoryList extends AppCompatActivity {
                 }
                 float averageTds = (float) total / maxTdsList.size();
                 // Calculate remaining PPM and estimated time
-                int remainingPpm = 1000 - maxTdsList.get(maxTdsList.size() - 1).getPpm1();
+                int remainingPpm = 1500 - maxTdsList.get(maxTdsList.size() - 1).getPpm1();
                 float estimatedHours = remainingPpm / averageTds;
 
                 Intent intent = new Intent(HistoryList.this, PredictionActivity.class);
