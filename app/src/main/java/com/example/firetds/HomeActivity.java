@@ -26,7 +26,7 @@ public class HomeActivity extends AppCompatActivity {
         // Find the existing toolbar by ID
         Toolbar toolbar = findViewById(R.id.toolbar);
 
-        // Set the existing toolbar as the support ActionBar
+        // Set the existing toolbar as a support ActionBar
         setSupportActionBar(toolbar);
 
         // Set a custom title for the activity (empty string to remove the default label)
