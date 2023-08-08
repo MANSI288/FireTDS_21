@@ -19,13 +19,13 @@ public class PredictionActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("");
 
-        int prediction = getIntent().getIntExtra(getString(R.string.text_prediction), 0);
+        int prediction = getIntent().getIntExtra("prediction", 0);
 
         TextView predictionTextView = findViewById(R.id.prediction_text);
         if (prediction <= 0) {
-            predictionTextView.setText(getString(R.string.clean_now));
+            predictionTextView.setText("The pool needs cleaning");
         } else {//new change
-            predictionTextView.setText(getString(R.string.text_predict) + prediction + getString(R.string.text_days));
+            predictionTextView.setText("Estimated hours until pool cleaning: " + prediction + "hours");
         }
     }
 }
