@@ -105,13 +105,8 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void openSupportEmailClient() {
-        String emailAddress = "support@example.com";
-        Intent intent = new Intent(Intent.ACTION_SENDTO);
-        intent.setData(Uri.parse("mailto:" + emailAddress));
-        intent.putExtra(Intent.EXTRA_SUBJECT, "Support Request");
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivity(intent);
-        }
+        Intent intent = new Intent(HomeActivity.this, Contact_Support.class);
+        startActivity(intent);
     }
 
 

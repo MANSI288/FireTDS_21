@@ -61,8 +61,10 @@
     <string name="toast3">Connexion réussie !</string>
     <string name="toast4">Nom d\'utilisateur ou mot de passe invalide.</string>
     <string name="toast5">Échec de lecture de la base de données.</string>
+    <string name="toast6">Pas assez de données pour calculer la tendance.</string>
 
     <string name="text1">Choisir la langue</string>
     <string name="text2">Le traitement n\'est pas nécessaire.</string>
+    <string name="text3">Veuillez contacter l\'assistance à support@aquasmart.com</string>
 
 </resources>

@@ -67,6 +67,14 @@
             android:label="@string/app_name"
             android:parentActivityName=".HomeActivity"
             android:theme="@style/AppTheme" />
+
+        <activity
+            android:name=".Contact_Support"
+            android:exported="true"
+            android:label="Contact_Support"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/AppTheme" />
+
     </application>
 
 </manifest>
