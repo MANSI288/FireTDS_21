@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -41,9 +42,9 @@ public class TdsAdapter extends RecyclerView.Adapter<TdsAdapter.MyViewHolder> {
         holder.date.setText(tdsData.getDate());
         holder.insight.setText(tdsData.getInsight());
 
-        holder.txt_option.setOnClickListener(v ->
+        holder.delete_imageView.setOnClickListener(v ->
         {
-            PopupMenu popupMenu = new PopupMenu(context,holder.txt_option);
+            PopupMenu popupMenu = new PopupMenu(context,holder.delete_imageView);
             popupMenu.inflate(R.menu.option_menu);
             popupMenu.setOnMenuItemClickListener(item ->
             {
@@ -55,8 +56,8 @@ public class TdsAdapter extends RecyclerView.Adapter<TdsAdapter.MyViewHolder> {
                         notifyItemRemoved(position);
                         list.remove(tdsData);
 
-                        Intent intent = new Intent(holder.txt_option.getContext(), HistoryList.class);
-                        holder.txt_option.getContext().startActivity(intent);
+                        Intent intent = new Intent(holder.delete_imageView.getContext(), HistoryList.class);
+                        holder.delete_imageView.getContext().startActivity(intent);
 
 
 
@@ -82,6 +83,7 @@ public class TdsAdapter extends RecyclerView.Adapter<TdsAdapter.MyViewHolder> {
 
 
         TextView date, ppm1, insight, txt_option;
+        ImageView delete_imageView;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -91,7 +93,8 @@ public class TdsAdapter extends RecyclerView.Adapter<TdsAdapter.MyViewHolder> {
             date = itemView.findViewById(R.id.dateTextView);
             insight = itemView.findViewById(R.id.insightText);
 
-            txt_option = itemView.findViewById(R.id.txt_option);
+           // txt_option = itemView.findViewById(R.id.txt_option);
+            delete_imageView = itemView.findViewById(R.id.delete_imageView);
 
         }
     }

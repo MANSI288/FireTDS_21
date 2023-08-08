@@ -24,7 +24,7 @@
 
             <TextView
 
-                android:layout_width="84dp"
+                android:layout_width="81dp"
                 android:layout_height="wrap_content"
                 android:text="PPM: "
                 android:textSize="24dp"
@@ -32,20 +32,17 @@
 
             <TextView
                 android:id="@+id/ppmTextView"
-                android:layout_width="157dp"
+                android:layout_width="212dp"
                 android:layout_height="match_parent"
                 android:hint="ppm value"
                 android:textSize="24dp" />
 
-
-            <TextView
-                android:id="@+id/txt_option"
-                android:layout_width="32dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:hint="x"
-                android:textAlignment="center"
-                android:textSize="24sp" />
+            <ImageView
+                android:id="@+id/delete_imageView"
+                android:layout_width="54dp"
+                android:layout_height="match_parent"
+                android:tint="@android:color/holo_red_dark"
+                app:srcCompat="@drawable/ic_baseline_delete_24" />
 
 
         </LinearLayout>
@@ -60,6 +57,7 @@
             android:layout_width="82dp"
             android:layout_height="wrap_content"
             android:text="Date: "
+            android:textStyle="bold"
             android:textSize="24sp" />
 
             <TextView
@@ -83,15 +81,12 @@
             android:layout_width="346dp"
             android:layout_height="wrap_content"
             android:hint="tds insight"
-            android:textSize="24dp" />/>
+            android:textSize="24dp"
+            android:textStyle="italic" />/>
 
     </LinearLayout>
 
     </LinearLayout>
-
-
-
-
 
 
 </androidx.cardview.widget.CardView>
