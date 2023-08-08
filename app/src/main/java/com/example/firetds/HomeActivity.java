@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 import androidx.appcompat.widget.Toolbar;
@@ -12,19 +13,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class HomeActivity extends AppCompatActivity {
 
-    public Button testButton;
-    public Button datahistorybutton;
-    public Button languagechange;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        // Find the testButton view by ID
-        testButton = findViewById(R.id.testButton);
-        datahistorybutton = findViewById(R.id.DataHistoryButton);
-        languagechange = findViewById(R.id.language_options);
 
         // Find the existing toolbar by ID
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -39,9 +36,11 @@ public class HomeActivity extends AppCompatActivity {
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-        // Check if the testButton is not null before setting the click listener
-        if (testButton != null) {
-            testButton.setOnClickListener(new View.OnClickListener() {
+
+
+        ImageView testWaterIcon = findViewById(R.id.testWaterImageView);
+        if (testWaterIcon != null) {
+            testWaterIcon.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     goToTestActivity();
@@ -49,8 +48,9 @@ public class HomeActivity extends AppCompatActivity {
             });
         }
 
-        if (datahistorybutton != null) {
-            datahistorybutton.setOnClickListener(new View.OnClickListener() {
+        ImageView historyIcon = findViewById(R.id.historyImageView);
+        if (historyIcon != null) {
+            historyIcon.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     goToHistoryList();
@@ -58,14 +58,16 @@ public class HomeActivity extends AppCompatActivity {
             });
         }
 
-        if (languagechange != null) {
-            languagechange.setOnClickListener(new View.OnClickListener() {
+        ImageView languageIcon = findViewById(R.id.languageImageView);
+        if (languageIcon != null) {
+            languageIcon.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     goToLanguageChange();
                 }
             });
         }
+
 
         // Set click listener for the profile icon to show the dropdown menu
         ImageView profileIcon = findViewById(R.id.profile_icon);

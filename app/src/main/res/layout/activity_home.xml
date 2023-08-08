@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
+    android:background="#EFEBEB"
     tools:context=".HomeActivity">
 
     <!-- Add the Toolbar -->
@@ -15,46 +16,79 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/testButton"
-        android:layout_width="147dp"
-        android:layout_height="71dp"
+    <ImageView
+        android:id="@+id/historyImageView"
+        android:layout_width="191dp"
+        android:layout_height="134dp"
+        android:layout_marginTop="20dp"
+        android:clickable="true"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:srcCompat="@drawable/baseline_insert_chart_outlined_24" />
 
-        android:layout_marginTop="180dp"
-        android:text="@string/button_TestWater"
-        android:textColor="@color/black"
-        android:textSize="16sp"
+    <ImageView
+        android:id="@+id/testWaterImageView"
+        android:layout_width="167dp"
+        android:layout_height="133dp"
+        android:layout_marginTop="32dp"
+        android:clickable="true"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:srcCompat="@drawable/baseline_water_drop_24" />
 
-    <Button
-        android:id="@+id/DataHistoryButton"
-        android:layout_width="147dp"
-        android:layout_height="72dp"
+    <ImageView
+        android:id="@+id/languageImageView"
+        android:layout_width="188dp"
+        android:layout_height="129dp"
+        android:layout_marginTop="20dp"
+        android:clickable="true"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:srcCompat="@drawable/baseline_language_24" />
 
-        android:layout_marginTop="64dp"
-        android:text="@string/button_DataHistory"
-        android:textColor="@color/black"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="91dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="4dp"
+        android:text="Test Water"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/testButton"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/testButton"
-        app:layout_constraintTop_toBottomOf="@+id/testButton" />
+        app:layout_constraintEnd_toEndOf="@+id/testWaterImageView"
+        app:layout_constraintHorizontal_bias="0.578"
+        app:layout_constraintStart_toStartOf="@+id/testWaterImageView"
+        app:layout_constraintTop_toBottomOf="@+id/testWaterImageView" />
 
-    <Button
-        android:id="@+id/language_options"
-        android:layout_width="147dp"
-        android:layout_height="71dp"
-        android:layout_marginTop="64dp"
-        android:text="@string/option_language"
-        android:textColor="@color/black"
-
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Data History"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/DataHistoryButton"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/DataHistoryButton"
-        app:layout_constraintTop_toBottomOf="@+id/DataHistoryButton" />
+        app:layout_constraintEnd_toEndOf="@+id/historyImageView"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/historyImageView"
+        app:layout_constraintTop_toBottomOf="@+id/historyImageView" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="78dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="8dp"
+        android:text="Language"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/languageImageView"
+        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintStart_toStartOf="@+id/languageImageView"
+        app:layout_constraintTop_toBottomOf="@+id/languageImageView"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
