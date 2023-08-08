@@ -62,21 +62,21 @@ public class Login extends AppCompatActivity {
                                     // Sign in successful, go to the welcome activity or user profile page
                                     Intent intent = new Intent(Login.this, HomeActivity.class);
                                     startActivity(intent);
-                                    Toast.makeText(Login.this, "Sign in successful!", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(Login.this, getString(R.string.toast3), Toast.LENGTH_SHORT).show();
                                     break;
                                 }
                             }
                             if (!isFound) {
-                                Toast.makeText(Login.this, "Invalid username or password.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Login.this, getString(R.string.toast4), Toast.LENGTH_SHORT).show();
                             }
                         }
                         @Override
                         public void onCancelled(DatabaseError databaseError) {
-                            Toast.makeText(Login.this, "Failed to read database.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Login.this, getString(R.string.toast5), Toast.LENGTH_SHORT).show();
                         }
                     });
                 } else {
-                    Toast.makeText(Login.this, "Please enter both username and password.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, getString(R.string.toast2), Toast.LENGTH_SHORT).show();
                 }
             }
         });

@@ -26,7 +26,7 @@ public class TestActivity extends AppCompatActivity {
 
     //declare buttons
     private TextView tdsTitleText, tdsValueDisplay, InsightTextView;
-    private Button treatmentDetailButton, saveButton; // Declare the button
+    private Button treatmentDetailButton, saveButton, treatmentIdealButton; // Declare the button
     private FirebaseAnalytics mFirebaseAnalytics;
     private DatabaseReference mDatabase;
     private FirebaseDatabase firebaseDatabase;
@@ -47,6 +47,7 @@ public class TestActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         treatmentDetailButton = findViewById(R.id.treatmentDetailButton);
+        treatmentIdealButton = findViewById(R.id.treatmentIdealButton);
         treatmentDetailButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,12 +87,15 @@ public class TestActivity extends AppCompatActivity {
                 if (ppm < 1000) {
                     InsightTextView.setText(getString(R.string.text_ideal));
                     treatmentDetailButton.setVisibility(View.GONE);
+                    treatmentIdealButton.setVisibility(View.VISIBLE);
                 } else if (ppm >1000 && ppm < 1500) {
                     InsightTextView.setText(getString(R.string.text_accept));
                     treatmentDetailButton.setVisibility(View.VISIBLE);
+                    treatmentIdealButton.setVisibility(View.GONE);
                 } else {
                     InsightTextView.setText(getString(R.string.text_unaccept));
                     treatmentDetailButton.setVisibility(View.VISIBLE);
+                    treatmentIdealButton.setVisibility(View.GONE);
                 }
             }
 

@@ -49,9 +49,9 @@ public class CreateAccountActivity extends AppCompatActivity {
                     Intent intent = new Intent(CreateAccountActivity.this, Login.class);
                     startActivity(intent);
 
-                    Toast.makeText(CreateAccountActivity.this, "Account created successfully!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CreateAccountActivity.this, getString(R.string.toast1), Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(CreateAccountActivity.this, "Please enter both username and password.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CreateAccountActivity.this, getString(R.string.toast2), Toast.LENGTH_SHORT).show();
                 }
             }
         });

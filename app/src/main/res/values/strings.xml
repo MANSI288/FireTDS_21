@@ -62,5 +62,6 @@
     <string name="toast4">Invalid username or password.</string>
     <string name="toast5">Failed to read database.</string>
     <string name="text1">Select Language</string>
+    <string name="text2">Treatment is not needed</string>
 
 </resources>

@@ -51,8 +51,8 @@
 
     <string name="username">Nom d’utilisateur </string>
     <string name="password">Mot de passe</string>
-    <string name="login">Créer un Compte</string>
-    <string name="signup">Se Connecter </string>
+    <string name="login">Se Connecter</string>
+    <string name="signup">Créer un Compte </string>
     <string name="logout">Déconnexion.</string>
     <string name="support">Contacter le support</string>
 
@@ -63,5 +63,6 @@
     <string name="toast5">Échec de lecture de la base de données.</string>
 
     <string name="text1">Choisir la langue</string>
+    <string name="text2">Le traitement n\'est pas nécessaire.</string>
 
 </resources>
