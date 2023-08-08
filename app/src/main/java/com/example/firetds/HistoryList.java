@@ -92,14 +92,12 @@ public class HistoryList extends AppCompatActivity {
                 // Create a sorted list of TDS data from the map
                 ArrayList<TdsData> maxTdsList = new ArrayList<>(maxTdsPerHourMap.values());
                 Collections.sort(maxTdsList, (tdsData1, tdsData2) -> tdsData1.getDate().compareTo(tdsData2.getDate()));
-
                 // Calculate total and average of TDS measurements
                 int total = 0;
                 for (TdsData tdsData : maxTdsList) {
                     total += tdsData.getPpm1();
                 }
                 float averageTds = (float) total / maxTdsList.size();
-
                 // Calculate remaining PPM and estimated time
                 int remainingPpm = 1000 - maxTdsList.get(maxTdsList.size() - 1).getPpm1();
                 float estimatedHours = remainingPpm / averageTds;
