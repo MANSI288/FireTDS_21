@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    android:background="#EFEBEB"
+    android:background="@drawable/water2"
     tools:context=".HomeActivity">
 
     <!-- Add the Toolbar -->
@@ -57,10 +57,12 @@
         android:layout_width="91dp"
         android:layout_height="30dp"
         android:layout_marginTop="4dp"
+        android:gravity="center|top"
         android:text="@string/button_TestWater"
         android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/testWaterImageView"
-        app:layout_constraintHorizontal_bias="0.578"
+        app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toStartOf="@+id/testWaterImageView"
         app:layout_constraintTop_toBottomOf="@+id/testWaterImageView" />
 
@@ -69,8 +71,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
+        android:gravity="center|top"
         android:text="@string/button_DataHistory"
         android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/historyImageView"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="@+id/historyImageView"
@@ -78,14 +82,15 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="78dp"
-        android:layout_height="29dp"
+        android:layout_width="105dp"
+        android:layout_height="28dp"
         android:layout_marginTop="8dp"
+        android:gravity="center|top"
         android:text="@string/option_language"
         android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/languageImageView"
-        app:layout_constraintHorizontal_bias="0.518"
         app:layout_constraintStart_toStartOf="@+id/languageImageView"
         app:layout_constraintTop_toBottomOf="@+id/languageImageView"
         app:layout_constraintVertical_bias="0.0" />

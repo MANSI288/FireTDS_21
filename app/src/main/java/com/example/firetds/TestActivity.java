@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -65,6 +66,9 @@ public class TestActivity extends AppCompatActivity {
         InsightTextView = findViewById(R.id.InsightTextView);
         saveButton = findViewById(R.id.saveButton);
 
+        ImageView gaugeMeter = findViewById(R.id.ppmImageView250);
+
+
         // Obtain the FirebaseAnalytics instance.
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
@@ -84,10 +88,33 @@ public class TestActivity extends AppCompatActivity {
 
                 ppm = dataSnapshot.child("ppm").getValue(int.class);
 
+                //Gauge Meter
+                if (ppm <= 250){
+                    gaugeMeter.setImageResource(R.drawable.ppm250);
+                } else if(ppm >250 && ppm <= 500){
+                    gaugeMeter.setImageResource(R.drawable.ppm500);
+                }else if(ppm >500 && ppm <= 750){
+                    gaugeMeter.setImageResource(R.drawable.ppm750);
+                }else if(ppm >750 && ppm <= 1000){
+                    gaugeMeter.setImageResource(R.drawable.ppm1000);
+                }else if(ppm >1000 && ppm <= 1250){
+                    gaugeMeter.setImageResource(R.drawable.ppm1250);
+                }else if(ppm >1250 && ppm <= 1500){
+                    gaugeMeter.setImageResource(R.drawable.ppm1500);
+                }else if(ppm >1500 && ppm <= 1750){
+                    gaugeMeter.setImageResource(R.drawable.ppm1750);
+                }else if(ppm >1750 && ppm <= 2000){
+                    gaugeMeter.setImageResource(R.drawable.ppm2000);
+                }else {
+                    gaugeMeter.setImageResource(R.drawable.ppm2000);
+                }
+
+
                 if (ppm < 1000) {
                     InsightTextView.setText(getString(R.string.text_ideal));
                     treatmentDetailButton.setVisibility(View.GONE);
                     treatmentIdealButton.setVisibility(View.VISIBLE);
+
                 } else if (ppm >1000 && ppm < 1500) {
                     InsightTextView.setText(getString(R.string.text_accept));
                     treatmentDetailButton.setVisibility(View.VISIBLE);
@@ -97,6 +124,8 @@ public class TestActivity extends AppCompatActivity {
                     treatmentDetailButton.setVisibility(View.VISIBLE);
                     treatmentIdealButton.setVisibility(View.GONE);
                 }
+
+
             }
 
             @Override

@@ -10,7 +10,7 @@
     <string name="text_accept">Acceptable TDS</string>
     <string name="text_unaccept">Inacceptable TDS</string>
     <string name="text_saveprompt">Donnees enregistrees!</string>
-    <string name="text_TDSvalue">Valeur TDS</string>
+    <string name="text_TDSvalue">TDS mètre d\'eau</string>
     <string name="text_options">Options de traitement de la piscine</string>
     <string name="text_record">L\'enregistrement est supprime</string>
     <string name="text_prediction">Pre\'diction</string>

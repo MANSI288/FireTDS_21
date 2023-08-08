@@ -10,7 +10,7 @@
     <string name="text_accept">Acceptable TDS</string>
     <string name="text_unaccept">Unacceptable TDS</string>
     <string name="text_saveprompt">Data Saved!</string>
-    <string name="text_TDSvalue">TDS Value</string>
+    <string name="text_TDSvalue">Water TDS Meter</string>
     <string name="text_options">Pool Treatment Options</string>
     <string name="text_record">Record is removed</string>
     <string name="text_prediction">Prediction</string>
