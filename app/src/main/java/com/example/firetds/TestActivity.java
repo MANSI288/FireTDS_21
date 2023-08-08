@@ -175,10 +175,7 @@ public class TestActivity extends AppCompatActivity {
 
         // Handle menu item click events
         popupMenu.setOnMenuItemClickListener(item -> {
-            if (item.getItemId() == R.id.menu_predictions) {
-                navigateToPredictionsActivity();
-                return true;
-            } else if (item.getItemId() == R.id.menu_log_out) {
+             if (item.getItemId() == R.id.menu_log_out) {
                 Intent intent = new Intent(TestActivity.this, Login.class);
                 startActivity(intent);
                 return true;
@@ -206,10 +203,7 @@ public class TestActivity extends AppCompatActivity {
 
 
 
-    private void navigateToPredictionsActivity() {
-        Intent intent = new Intent(TestActivity.this, PredictionActivity.class);
-        startActivity(intent);
-    }
+
 
 
 

@@ -3,7 +3,7 @@
     <string name="button_GetStarted">Get Started</string>
     <string name="button_TestWater">Test Water</string>
     <string name="button_DataHistory">Data History</string>
-    <string name="button_Graph">Graph</string>
+    <string name="button_Graph">Predictions</string>
     <string name="button_TreatmentDetails">Treatment Details</string>
     <string name="button_SaveData">Save Data</string>
     <string name="text_ideal">Ideal TDS</string>

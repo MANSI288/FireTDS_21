@@ -2,10 +2,6 @@
 
 
     <item
-        android:id="@+id/menu_predictions"
-        android:title="@string/option_predictions" />
-
-    <item
         android:id="@+id/menu_log_out"
         android:title="@string/logout" />
 

@@ -89,10 +89,7 @@ public class HomeActivity extends AppCompatActivity {
 
         // Handle menu item click events
         popupMenu.setOnMenuItemClickListener(item -> {
-            if (item.getItemId() == R.id.menu_predictions) {
-                navigateToPredictionsActivity();
-                return true;
-            } else if (item.getItemId() == R.id.menu_log_out) {
+             if (item.getItemId() == R.id.menu_log_out) {
                 Intent intent = new Intent(HomeActivity.this, Login.class);
                 startActivity(intent);
                 return true;
@@ -117,17 +114,7 @@ public class HomeActivity extends AppCompatActivity {
         }
     }
 
-    private void navigateToMyProfileActivity() {
-        Intent intent = new Intent(HomeActivity.this, MyProfileActivity.class);
-        startActivity(intent);
-    }
 
-
-
-    private void navigateToPredictionsActivity() {
-        Intent intent = new Intent(HomeActivity.this, PredictionActivity.class);
-        startActivity(intent);
-    }
 
 
 
